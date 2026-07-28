@@ -209,6 +209,8 @@ input[type=range]{
   background:rgba(15,26,41,.7); overflow-y:auto; padding:22px 20px 60px;
 }
 .detail .empty{ color:var(--muted); font-size:.85rem; text-align:center; margin-top:80px; line-height:1.8; }
+.detail-close{ display:none; }
+.detail-backdrop{ display:none; }
 .detail .empty .ico{ font-size:2rem; display:block; margin-bottom:10px; opacity:.5; }
 .d-head{ margin-bottom:18px; }
 .d-badge{ display:inline-block; font-family:var(--mono); font-size:.68rem; color:var(--teal); border:1px solid var(--teal); padding:2px 9px; border-radius:999px; margin-bottom:10px;}
@@ -278,6 +280,31 @@ input[type=range]{
   .kpi-strip{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .kpi-card{ min-width:110px; flex:0 0 auto; }
   body{ overflow-x:hidden; }
+
+  .detail{
+    display:block;
+    position:fixed; left:0; right:0; bottom:0; top:auto;
+    max-height:78vh;
+    border-radius:16px 16px 0 0;
+    border-inline-start:none; border-top:1px solid var(--border);
+    transform:translateY(105%);
+    transition:transform .28s ease;
+    z-index:700;
+    box-shadow:0 -10px 34px rgba(0,0,0,.55);
+  }
+  .detail.open{ transform:translateY(0); }
+  .detail-close{
+    display:flex; align-items:center; justify-content:center;
+    position:sticky; top:0; margin-inline-start:auto; margin-bottom:8px;
+    width:30px; height:30px; border-radius:50%; z-index:2;
+    background:var(--panel); border:1px solid var(--border); color:var(--muted);
+    font-size:.85rem; cursor:pointer;
+  }
+  .detail-backdrop{
+    display:block; position:fixed; inset:0; background:rgba(5,10,16,.6);
+    z-index:650; opacity:0; pointer-events:none; transition:opacity .28s ease;
+  }
+  .detail-backdrop.show{ opacity:1; pointer-events:auto; }
 }
 </style>
 </head>
@@ -368,6 +395,7 @@ input[type=range]{
   <div class="detail" id="detailPanel">
     <div class="empty"><span class="ico">◎</span>اختر مشروعًا من الخريطة أو قائمة الأولويات<br>لعرض تفصيل الـ Score وسجل الإشارات</div>
   </div>
+  <div class="detail-backdrop" id="detailBackdrop"></div>
 
 </div>
 
@@ -656,6 +684,7 @@ function selectProject(p, sc){
   const m = monthsToHandover(p.handover);
   const timingText = m<0 ? "تم التسليم أو تجاوز الموعد المعلن" : `نافذة الاحتياج المتوقعة خلال ~${Math.max(0,Math.round(m))} شهرًا`;
   document.getElementById('detailPanel').innerHTML = `
+    <button class="detail-close" id="detailCloseBtn" aria-label="إغلاق">✕</button>
     <div class="d-head">
       <div class="d-badge">${typeLabel(p.type)} · ${p.segment}</div>
       <h2 class="d-title">${p.name}</h2>
@@ -703,7 +732,17 @@ function selectProject(p, sc){
       ⚠ نموذج تفاعلي (Prototype) حقيقي البيانات: المعلومات أعلاه (المطوّر، الموقع، سعر البداية، موعد التسليم) مصدرها بحث ويب حي على مصادر عقارية عامة منشورة (Bayut، أريبيان بزنس، البيان، Property Finder). أما <b>Score والتفصيل التحليلي</b> فمحسوب فعليًا وفق صيغة القسم 18 من وثيقة المواصفات، وليس رقمًا عشوائيًا. الربط الحي المباشر بأنظمة دائرة الأراضي والبلديات (DLD/Trakhees) غير متاح لأي أداة عامة بدون شراكة بيانات رسمية معها.
     </div>
   `;
+  // على الجوال: افتح لوحة التفاصيل كنافذة منزلقة من الأسفل
+  document.getElementById('detailPanel').classList.add('open');
+  document.getElementById('detailBackdrop').classList.add('show');
+  const closeBtn = document.getElementById('detailCloseBtn');
+  if(closeBtn) closeBtn.addEventListener('click', closeDetailMobile);
 }
+function closeDetailMobile(){
+  document.getElementById('detailPanel').classList.remove('open');
+  document.getElementById('detailBackdrop').classList.remove('show');
+}
+document.getElementById('detailBackdrop').addEventListener('click', closeDetailMobile);
 function bkRow(label, val){
   return `<div class="row"><div class="row-top"><span>${label}</span><b>${val}</b></div><div class="bar-bg"><div class="bar-fill" style="width:${val}%"></div></div></div>`;
 }
