@@ -373,8 +373,25 @@
       "units": 234,
       "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
+    },
+    {
+      "id": 23,
+      "name": "Saadiyat Lagoons",
+      "developer": "Aldar Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة السعديات",
+      "lat": 24.5372,
+      "lng": 54.4481,
+      "handover": "2026-Q2",
+      "priceFrom": 6200000,
+      "devClass": "major",
+      "units": 2075,
+      "valueAED": null,
+      "source": "Bayut — مشاريع أبوظبي الجديدة"
     }
   ],
-  "generated_at": "2026-07-28T21:41:30.958Z",
+  "generated_at": "2026-07-28T22:07:00.064Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
