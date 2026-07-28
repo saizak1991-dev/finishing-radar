@@ -14,6 +14,45 @@ if (!GEMINI_API_KEY) {
 const MODEL = "gemini-flash-latest";
 const DATA_FILE = "data.json";
 
+const SEARCH_QUERIES = [
+  "مشاريع عقارية جديدة دبي 2026",
+  "مشاريع عقارية جديدة أبوظبي 2026",
+  "Dubai off-plan projects handover update 2026",
+  "Abu Dhabi off-plan projects handover update 2026",
+];
+
+async function duckDuckGoSearch(query) {
+  const url = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
+  const res = await fetch(url, {
+    headers: { "User-Agent": "Mozilla/5.0 (compatible; finishing-radar-bot/1.0)" },
+  });
+  if (!res.ok) return [];
+  const html = await res.text();
+  const results = [];
+  const re = /<a[^>]*class="result__a"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?<a[^>]*class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g;
+  let m;
+  while ((m = re.exec(html)) && results.length < 5) {
+    const strip = (s) => s.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#x27;/g, "'").trim();
+    results.push({ title: strip(m[2]), snippet: strip(m[3]), url: m[1] });
+  }
+  return results;
+}
+
+async function gatherLiveSearchContext() {
+  const chunks = [];
+  for (const q of SEARCH_QUERIES) {
+    try {
+      const results = await duckDuckGoSearch(q);
+      for (const r of results) {
+        chunks.push(`- ${r.title}: ${r.snippet}`);
+      }
+    } catch (e) {
+      console.warn(`تعذّر البحث عن "${q}":`, e.message);
+    }
+  }
+  return chunks.join("\n");
+}
+
 function loadExistingProjects() {
   try {
     const raw = JSON.parse(readFileSync(DATA_FILE, "utf8"));
@@ -24,13 +63,16 @@ function loadExistingProjects() {
   return [];
 }
 
-function buildPrompt(existingProjects) {
-  return `ابحث الآن على الويب عن آخر مستجدات مشاريع التطوير العقاري السكني/التجاري قيد الإنشاء في دبي وأبوظبي (الإمارات) — تحديثات مواعيد التسليم، مشاريع جديدة أُعلنت، ومشاريع سُلّمت فعليًا (احذفها من القائمة).
+function buildPrompt(existingProjects, searchContext) {
+  return `فيما يلي نتائج بحث حية من الويب عن مشاريع التطوير العقاري في دبي وأبوظبي (استخدمها كمصدر معلومات حديث):
+${searchContext || "(لا توجد نتائج بحث متاحة هذه المرة)"}
+
+بناءً على نتائج البحث أعلاه، وعلى معرفتك العامة، حدّث قائمة مشاريع التطوير العقاري السكني/التجاري قيد الإنشاء في دبي وأبوظبي (الإمارات) — تحديثات مواعيد التسليم، مشاريع جديدة أُعلنت، ومشاريع سُلّمت فعليًا (احذفها من القائمة).
 
 لديك حاليًا هذه القائمة كنقطة انطلاق (JSON):
 ${JSON.stringify(existingProjects)}
 
-أعد كتابة القائمة كاملة محدّثة بناءً على ما تجده من مصادر عامة موثوقة (Bayut, Property Finder, Arabian Business, البيان, مواقع المطورين الرسمية). حافظ على نفس بنية كل عنصر تمامًا (نفس أسماء الحقول بالضبط: id, name, developer, type, segment, emirate, area, lat, lng, handover, priceFrom, devClass, units, valueAED, source).
+أعد كتابة القائمة كاملة محدّثة. حافظ على نفس بنية كل عنصر تمامًا (نفس أسماء الحقول بالضبط: id, name, developer, type, segment, emirate, area, lat, lng, handover, priceFrom, devClass, units, valueAED, source).
 - type يجب أن يكون واحدًا من: apartment, villa, commercial.
 - emirate يجب أن يكون: dubai أو abudhabi.
 - handover بصيغة "YYYY-Qن".
@@ -41,7 +83,6 @@ async function callGemini(prompt) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
-    tools: [{ googleSearch: {} }],
   };
   const res = await fetch(url, {
     method: "POST",
@@ -71,16 +112,20 @@ function extractJsonArray(text) {
 
 async function main() {
   const existing = loadExistingProjects();
-  console.log(`جاري التحديث الحي عبر Gemini (${MODEL})... عدد المشاريع الحالية: ${existing.length}`);
+  console.log(`جاري التحديث عبر Gemini (${MODEL})... عدد المشاريع الحالية: ${existing.length}`);
 
-  const prompt = buildPrompt(existing);
+  console.log("جاري البحث الحي (DuckDuckGo)...");
+  const searchContext = await gatherLiveSearchContext();
+  console.log(`تم جمع سياق البحث (${searchContext.length} حرف).`);
+
+  const prompt = buildPrompt(existing, searchContext);
   const text = await callGemini(prompt);
   const projects = extractJsonArray(text);
 
   const payload = {
     projects,
     generated_at: new Date().toISOString(),
-    source_note: `محدّث تلقائيًا عبر GitHub Actions + Gemini (${MODEL}) مع بحث ويب حي.`,
+    source_note: `محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (${MODEL}).`,
   };
 
   writeFileSync(DATA_FILE, JSON.stringify(payload, null, 2), "utf8");
