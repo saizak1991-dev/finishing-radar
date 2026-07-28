@@ -14,6 +14,7 @@
       "priceFrom": 21500000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -30,6 +31,7 @@
       "priceFrom": 2000000,
       "devClass": "major",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -46,6 +48,7 @@
       "priceFrom": 1650000,
       "devClass": "major",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -62,6 +65,7 @@
       "priceFrom": 8200000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -78,6 +82,7 @@
       "priceFrom": 15000000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -94,6 +99,7 @@
       "priceFrom": 23000000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -110,6 +116,7 @@
       "priceFrom": 13800000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -126,6 +133,7 @@
       "priceFrom": 614000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
@@ -176,6 +184,7 @@
       "priceFrom": 750000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "تنامي العقارية"
     },
     {
@@ -192,6 +201,7 @@
       "priceFrom": 900000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "تنامي العقارية"
     },
     {
@@ -208,6 +218,7 @@
       "priceFrom": 2100000,
       "devClass": "major",
       "units": 262,
+      "valueAED": null,
       "source": "أريبيان بزنس"
     },
     {
@@ -241,10 +252,28 @@
       "priceFrom": 680000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "أريبيان بزنس"
     },
     {
       "id": 16,
+      "name": "Mercedes-Benz Places",
+      "developer": "Binghatti",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "وسط مدينة دبي",
+      "lat": 25.1972,
+      "lng": 55.2744,
+      "handover": "2026-Q4",
+      "priceFrom": 8800000,
+      "devClass": "major",
+      "units": 150,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 17,
       "name": "Ethir by Aldar",
       "developer": "Aldar Properties",
       "type": "villa",
@@ -257,10 +286,11 @@
       "priceFrom": 6100000,
       "devClass": "major",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
     },
     {
-      "id": 17,
+      "id": 18,
       "name": "Al Sidr",
       "developer": "Aldar Properties",
       "type": "villa",
@@ -273,10 +303,11 @@
       "priceFrom": 6100000,
       "devClass": "major",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
     },
     {
-      "id": 18,
+      "id": 19,
       "name": "Reeman Living",
       "developer": "Aldar Properties",
       "type": "apartment",
@@ -289,10 +320,11 @@
       "priceFrom": 365000,
       "devClass": "major",
       "units": null,
+      "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
     },
     {
-      "id": 19,
+      "id": 20,
       "name": "بلوم ليفينج فيلاز",
       "developer": "بلوم القابضة للتطوير العقاري",
       "type": "villa",
@@ -305,10 +337,11 @@
       "priceFrom": 3292000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "Property Finder"
     },
     {
-      "id": 20,
+      "id": 21,
       "name": "تارا بارك",
       "developer": "مدن (Modon)",
       "type": "apartment",
@@ -321,9 +354,27 @@
       "priceFrom": 1500000,
       "devClass": "boutique",
       "units": null,
+      "valueAED": null,
       "source": "أريبيان بزنس"
+    },
+    {
+      "id": 22,
+      "name": "سما ياس",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة ياس",
+      "lat": 24.4981,
+      "lng": 54.6052,
+      "handover": "2027-Q3",
+      "priceFrom": 1900000,
+      "devClass": "major",
+      "units": 234,
+      "valueAED": null,
+      "source": "Bayut — مشاريع أبوظبي الجديدة"
     }
   ],
-  "generated_at": "2026-07-28T13:09:53.560Z",
-  "source_note": "نسخة أولية يدوية — بانتظار أول تشغيل لـ GitHub Action"
+  "generated_at": "2026-07-28T19:58:42.182Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
