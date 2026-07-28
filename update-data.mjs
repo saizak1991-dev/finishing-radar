@@ -11,7 +11,7 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-const MODEL = "gemini-2.5-flash";
+const MODEL = "gemini-flash-latest";
 const DATA_FILE = "data.json";
 
 function loadExistingProjects() {
