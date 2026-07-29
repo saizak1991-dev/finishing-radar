@@ -6,6 +6,12 @@
 <title>رادار · اكتشاف فرص التشطيبات الداخلية — الإمارات</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1420">
 <script>
 (function(){
   var box = document.createElement('div');
@@ -211,6 +217,111 @@ input[type=range]{
 .detail .empty{ color:var(--muted); font-size:.85rem; text-align:center; margin-top:80px; line-height:1.8; }
 .detail-close{ display:none; }
 .detail-backdrop{ display:none; }
+
+.search-row{ display:flex; gap:10px; align-items:center; margin-bottom:14px; }
+#searchBox{
+  flex:1; background:var(--panel-2); border:1px solid var(--border); border-radius:10px;
+  padding:9px 12px; color:var(--text); font-family:inherit; font-size:.82rem;
+}
+#searchBox:focus{ outline:none; border-color:var(--teal); }
+.fav-toggle{ display:flex; align-items:center; gap:6px; font-size:.78rem; color:var(--muted); white-space:nowrap; cursor:pointer; }
+.fav-toggle input{ accent-color:var(--gold); }
+
+.fav-btn{
+  position:absolute; top:8px; left:8px; background:none; border:none; cursor:pointer;
+  font-size:1.05rem; color:var(--muted); line-height:1; padding:2px;
+}
+.fav-btn.active{ color:var(--gold); }
+.pcard{ position:relative; }
+
+.lm-wrap{ position:relative; width:30px; height:30px; }
+.lm-pulse{
+  position:absolute; inset:0; border-radius:50%; opacity:.55;
+  animation: lm-pulse-anim 1.8s ease-out infinite;
+}
+@keyframes lm-pulse-anim{
+  0%{ transform:scale(1); opacity:.55; }
+  100%{ transform:scale(2.1); opacity:0; }
+}
+.lm-cluster{
+  display:flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:50%; color:#0c1420; font-weight:700;
+  font-family:var(--mono); border:3px solid rgba(12,20,32,.6);
+}
+#btnHeat.active{ background:var(--gold); color:#1a1305; }
+
+/* ===== الخط الزمني ===== */
+.timeline-view{ position:absolute; inset:0; overflow-y:auto; padding:20px 22px 60px; display:none; }
+.timeline-view.show{ display:block; }
+.timeline-track{ position:relative; display:flex; gap:16px; overflow-x:auto; padding:30px 4px 20px; }
+.timeline-item{
+  flex:0 0 190px; background:var(--panel); border:1px solid var(--border); border-radius:12px;
+  padding:12px; position:relative; cursor:pointer;
+}
+.timeline-item .tl-months{ font-family:var(--mono); font-size:.7rem; color:var(--gold-soft); margin-bottom:6px; }
+.timeline-item .tl-name{ font-size:.85rem; font-weight:600; margin-bottom:4px; }
+.timeline-item .tl-meta{ font-size:.68rem; color:var(--muted); }
+.timeline-item .tl-score{ position:absolute; top:10px; left:10px; width:26px; height:26px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:.68rem; font-weight:700; color:#0c1420; }
+
+/* ===== حالة المتابعة (CRM) ===== */
+.status-badge{
+  display:inline-flex; align-items:center; gap:4px; font-size:.66rem; padding:2px 8px; border-radius:20px;
+  border:1px solid var(--border); color:var(--muted); margin-inline-start:6px;
+}
+.status-badge.spotted{ color:#7f93aa; }
+.status-badge.contacted{ color:#4fa3d1; border-color:#4fa3d1; }
+.status-badge.quoted{ color:#d4a24e; border-color:#d4a24e; }
+.status-badge.won{ color:#5fbf7e; border-color:#5fbf7e; }
+.status-badge.lost{ color:#e2665f; border-color:#e2665f; }
+.status-select{
+  background:var(--panel-2); color:var(--text); border:1px solid var(--border); border-radius:8px;
+  padding:6px 10px; font-family:inherit; font-size:.78rem; margin-top:10px;
+}
+
+/* ===== المقارنة ===== */
+.compare-check{ position:absolute; top:8px; left:34px; display:flex; align-items:center; gap:4px; }
+.compare-bar{
+  position:fixed; bottom:16px; right:50%; transform:translateX(50%); z-index:800;
+  background:var(--panel); border:1px solid var(--gold); border-radius:14px; padding:10px 16px;
+  display:none; align-items:center; gap:12px; font-size:.8rem; box-shadow:0 8px 30px rgba(0,0,0,.5);
+}
+.compare-bar.show{ display:flex; }
+.compare-bar button{ background:var(--gold); color:#1a1305; border:none; border-radius:8px; padding:6px 12px; font-weight:600; cursor:pointer; font-size:.76rem; }
+.compare-bar #compareClearBtn{ background:transparent; color:var(--muted); border:1px solid var(--border); }
+.compare-modal-backdrop{
+  display:none; position:fixed; inset:0; background:rgba(5,10,16,.7); z-index:900; align-items:center; justify-content:center;
+}
+.compare-modal-backdrop.show{ display:flex; }
+.compare-modal{
+  background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:24px;
+  max-width:92vw; max-height:85vh; overflow:auto; width:820px;
+}
+.compare-modal h2{ font-family:var(--disp); margin:0 0 16px; }
+.compare-modal table{ width:100%; border-collapse:collapse; font-size:.8rem; }
+.compare-modal th, .compare-modal td{ border:1px solid var(--border); padding:8px 10px; text-align:center; }
+.compare-modal th{ background:var(--panel-2); color:var(--muted); font-weight:600; }
+.compare-modal td:first-child, .compare-modal th:first-child{ text-align:start; color:var(--gold-soft); }
+
+/* ===== التعريف الأولي ===== */
+.onboard-backdrop{
+  display:none; position:fixed; inset:0; background:rgba(5,10,16,.82); z-index:950; align-items:center; justify-content:center;
+}
+.onboard-backdrop.show{ display:flex; }
+.onboard-card{
+  background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:28px;
+  max-width:400px; text-align:center;
+}
+.onboard-card h3{ font-family:var(--disp); margin:0 0 10px; color:var(--gold-soft); }
+.onboard-card p{ color:var(--muted); font-size:.85rem; line-height:1.8; margin-bottom:18px; }
+.onboard-card .ob-actions{ display:flex; justify-content:space-between; align-items:center; }
+.onboard-card button{
+  background:var(--gold); color:#1a1305; border:none; border-radius:8px; padding:8px 16px; font-weight:600; cursor:pointer;
+}
+.onboard-card .ob-skip{ background:transparent; color:var(--muted); }
+.onboard-dots{ display:flex; gap:6px; }
+.onboard-dots span{ width:6px; height:6px; border-radius:50%; background:var(--border); }
+.onboard-dots span.active{ background:var(--gold); }
 .detail .empty .ico{ font-size:2rem; display:block; margin-bottom:10px; opacity:.5; }
 .d-head{ margin-bottom:18px; }
 .d-badge{ display:inline-block; font-family:var(--mono); font-size:.68rem; color:var(--teal); border:1px solid var(--teal); padding:2px 9px; border-radius:999px; margin-bottom:10px;}
@@ -326,7 +437,10 @@ input[type=range]{
       <div class="view-toggle">
         <button id="btn-map" class="active">خريطة</button>
         <button id="btn-list">قائمة الأولويات</button>
+        <button id="btn-timeline">الخط الزمني</button>
       </div>
+      <button id="btnHeat" class="refresh-btn" title="تبديل عرض الخريطة الحرارية">🔥</button>
+      <button id="btnExport" class="refresh-btn" title="تصدير النتائج الحالية CSV">⬇ تصدير</button>
     </div>
   </div>
 
@@ -382,7 +496,15 @@ input[type=range]{
         <h1>قائمة أولوياتي اليوم</h1>
         <div class="count"><span id="listCount">0</span> مشروع مطابق</div>
       </div>
+      <div class="search-row">
+        <input type="text" id="searchBox" placeholder="🔎 ابحث بالاسم، المطوّر، أو المنطقة...">
+        <label class="fav-toggle"><input type="checkbox" id="favOnly"> ⭐ المفضلة فقط</label>
+      </div>
       <div id="listContainer"></div>
+    </div>
+    <div class="timeline-view" id="timelineView">
+      <div class="queue-header"><h1>الخط الزمني للتسليم</h1></div>
+      <div id="timelineTrack" class="timeline-track"></div>
     </div>
     <div class="kpi-strip">
       <div class="kpi-card"><div class="v" id="kpiTotal">—</div><div class="l">مشروع نشط مرصود</div></div>
@@ -396,6 +518,23 @@ input[type=range]{
     <div class="empty"><span class="ico">◎</span>اختر مشروعًا من الخريطة أو قائمة الأولويات<br>لعرض تفصيل الـ Score وسجل الإشارات</div>
   </div>
   <div class="detail-backdrop" id="detailBackdrop"></div>
+
+  <div class="compare-bar" id="compareBar">
+    <span id="compareCount">0</span> مشاريع محدّدة للمقارنة
+    <button id="compareOpenBtn">قارن الآن</button>
+    <button id="compareClearBtn">مسح</button>
+  </div>
+  <div class="compare-modal-backdrop" id="compareModalBackdrop">
+    <div class="compare-modal">
+      <button class="detail-close" id="compareCloseBtn" style="position:sticky;">✕</button>
+      <h2>مقارنة المشاريع</h2>
+      <div id="compareTableWrap"></div>
+    </div>
+  </div>
+
+  <div class="onboard-backdrop" id="onboardBackdrop">
+    <div class="onboard-card" id="onboardCard"></div>
+  </div>
 
 </div>
 
@@ -585,8 +724,10 @@ function computeScore(p, weights, activeTypes, radiusKm){
   return {total: Math.round(score), t: Math.round(t), f: Math.round(f), g: Math.round(g), seg: Math.round(seg)};
 }
 function scoreColor(s){
+  if(s>=85) return "#3fd17e";
   if(s>=70) return "#5fbf7e";
-  if(s>=45) return "#d4a24e";
+  if(s>=55) return "#d4a24e";
+  if(s>=40) return "#e08a4e";
   return "#e2665f";
 }
 function fmtAED(n){
@@ -605,12 +746,22 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 
 let markers = {};
 let baseMarker = null;
+const clusterGroup = L.markerClusterGroup({
+  spiderfyOnMaxZoom:true, showCoverageOnHover:false, maxClusterRadius:50,
+  iconCreateFunction:function(cluster){
+    const items = cluster.getAllChildMarkers();
+    const avg = Math.round(items.reduce((s,m)=>s+(m._scoreVal||0),0)/items.length);
+    const c = scoreColor(avg);
+    return L.divIcon({className:'', html:`<div class="lm-cluster" style="background:${c}">${cluster.getChildCount()}</div>`, iconSize:[38,38], iconAnchor:[19,19]});
+  }
+}).addTo(map);
 
 function markerIcon(score){
   const c = scoreColor(score);
+  const pulse = score>=85 ? '<div class="lm-pulse" style="background:'+c+'"></div>' : '';
   return L.divIcon({
     className:'',
-    html:`<div class="lm-dot" style="width:${score>=70?30:24}px;height:${score>=70?30:24}px;background:${c}">${score}</div>`,
+    html:`<div class="lm-wrap">${pulse}<div class="lm-dot" style="width:${score>=70?30:24}px;height:${score>=70?30:24}px;background:${c}">${score}</div></div>`,
     iconSize:[30,30], iconAnchor:[15,15]
   });
 }
@@ -626,18 +777,26 @@ function renderAll(){
   const activeEmirates = [...document.querySelectorAll('.emirate-list input:checked')].map(c=>c.dataset.emirate);
   const scoreMin = +document.getElementById('scoreMin').value;
   const radiusKm = +document.getElementById('radius').value;
+  const searchEl = document.getElementById('searchBox');
+  const searchQ = searchEl ? searchEl.value.trim().toLowerCase() : '';
+  const favOnlyEl = document.getElementById('favOnly');
+  const favOnly = favOnlyEl ? favOnlyEl.checked : false;
 
-  Object.values(markers).forEach(m=>map.removeLayer(m));
+  Object.values(markers).forEach(m=>clusterGroup.removeLayer(m));
   markers = {};
 
   const results = [];
   PROJECTS.forEach(p=>{
     if(!activeEmirates.includes(p.emirate)) return;
+    if(favOnly && !isFavorite(p.id)) return;
+    if(searchQ && !((p.name||'').toLowerCase().includes(searchQ) || (p.developer||'').toLowerCase().includes(searchQ) || (p.area||'').toLowerCase().includes(searchQ))) return;
     const sc = computeScore(p, weights, activeTypes, radiusKm);
     if(!sc || sc.total < scoreMin) return;
     results.push({p, sc});
-    const marker = L.marker([p.lat,p.lng], {icon:markerIcon(sc.total)}).addTo(map);
+    const marker = L.marker([p.lat,p.lng], {icon:markerIcon(sc.total)});
+    marker._scoreVal = sc.total;
     marker.on('click', ()=>selectProject(p, sc));
+    clusterGroup.addLayer(marker);
     markers[p.id] = marker;
   });
   results.sort((a,b)=>b.sc.total-a.sc.total);
@@ -652,12 +811,18 @@ function renderAll(){
   // list view
   const listContainer = document.getElementById('listContainer');
   document.getElementById('listCount').textContent = results.length;
+  lastResults = results;
   listContainer.innerHTML = results.map(r=>{
     const p=r.p, sc=r.sc;
+    const fav = isFavorite(p.id);
+    const cmp = compareIds.includes(String(p.id));
+    const st = getStatus(p.id);
     return `<div class="pcard" data-id="${p.id}" style="--score:${sc.total};--ring-color:${scoreColor(sc.total)}">
+      <button class="fav-btn ${fav?'active':''}" data-fav-id="${p.id}" aria-label="مفضلة">${fav?'★':'☆'}</button>
+      <label class="compare-check" title="أضف للمقارنة"><input type="checkbox" data-cmp-id="${p.id}" ${cmp?'checked':''}></label>
       <div class="score-ring"><span>${sc.total}</span></div>
       <div>
-        <div class="pname">${p.name}</div>
+        <div class="pname">${p.name} ${st?`<span class="status-badge ${st}">${statusLabel(st)}</span>`:''}</div>
         <div class="pmeta">
           <span class="tag">${p.developer}</span>
           <span class="tag">${p.area}</span>
@@ -669,13 +834,161 @@ function renderAll(){
   }).join('') || '<div style="color:var(--muted);padding:40px;text-align:center;">لا توجد مشاريع مطابقة لهذه الفلاتر</div>';
 
   listContainer.querySelectorAll('.pcard').forEach(el=>{
-    el.addEventListener('click', ()=>{
+    el.addEventListener('click', (e)=>{
+      if(e.target.closest('.fav-btn') || e.target.closest('.compare-check')) return;
       const p = PROJECTS.find(x=>x.id==el.dataset.id);
       const sc = computeScore(p, weights, activeTypes, radiusKm);
       selectProject(p, sc);
     });
   });
+  listContainer.querySelectorAll('.fav-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      toggleFavorite(btn.dataset.favId);
+      renderAll();
+    });
+  });
+  listContainer.querySelectorAll('[data-cmp-id]').forEach(chk=>{
+    chk.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      toggleCompare(chk.dataset.cmpId);
+    });
+  });
+  renderTimeline(results);
 }
+function isFavorite(id){
+  try{ return JSON.parse(localStorage.getItem('radar_favorites')||'[]').includes(String(id)); }catch(e){ return false; }
+}
+function toggleFavorite(id){
+  try{
+    let f = JSON.parse(localStorage.getItem('radar_favorites')||'[]');
+    id = String(id);
+    if(f.includes(id)) f = f.filter(x=>x!==id); else f.push(id);
+    localStorage.setItem('radar_favorites', JSON.stringify(f));
+  }catch(e){}
+}
+
+/* ============ CRM: حالة المتابعة ============ */
+const STATUS_ORDER = ['spotted','contacted','quoted','won','lost'];
+function statusLabel(st){
+  return {spotted:'مرصود', contacted:'تم التواصل', quoted:'عرض سعر', won:'فوز', lost:'خسارة'}[st] || '';
+}
+function getStatus(id){
+  try{ return localStorage.getItem('radar_status:'+id) || ''; }catch(e){ return ''; }
+}
+function setStatus(id, st){
+  try{
+    if(st) localStorage.setItem('radar_status:'+id, st);
+    else localStorage.removeItem('radar_status:'+id);
+  }catch(e){}
+}
+
+/* ============ المقارنة ============ */
+let compareIds = [];
+let lastResults = [];
+function toggleCompare(id){
+  id = String(id);
+  if(compareIds.includes(id)){
+    compareIds = compareIds.filter(x=>x!==id);
+  } else {
+    if(compareIds.length>=3){ alert('يمكن مقارنة 3 مشاريع كحد أقصى'); renderAll(); return; }
+    compareIds.push(id);
+  }
+  updateCompareBar();
+  renderAll();
+}
+function updateCompareBar(){
+  const bar = document.getElementById('compareBar');
+  document.getElementById('compareCount').textContent = compareIds.length;
+  bar.classList.toggle('show', compareIds.length>0);
+}
+function openCompareModal(){
+  const items = compareIds.map(id=>PROJECTS.find(p=>String(p.id)===id)).filter(Boolean);
+  if(!items.length) return;
+  const weights = {
+    t: +document.getElementById('wTiming').value, f: +document.getElementById('wFit').value,
+    g: +document.getElementById('wGeo').value, s: +document.getElementById('wSeg').value,
+  };
+  const activeTypes = [...document.querySelectorAll('#chip-type .chip.active')].map(c=>c.dataset.type);
+  const radiusKm = +document.getElementById('radius').value;
+  const rows = [
+    ['', ...items.map(p=>p.name)],
+    ['Score', ...items.map(p=>{const sc=computeScore(p, weights, activeTypes, radiusKm); return sc?sc.total:'—';})],
+    ['المطوّر', ...items.map(p=>p.developer)],
+    ['المنطقة', ...items.map(p=>p.area)],
+    ['الإمارة', ...items.map(p=>p.emirate==='dubai'?'دبي':'أبوظبي')],
+    ['النوع', ...items.map(p=>typeLabel(p.type))],
+    ['موعد التسليم', ...items.map(p=>p.handover||'—')],
+    ['سعر البداية', ...items.map(p=>p.priceFrom?fmtAED(p.priceFrom):'—')],
+    ['القيمة الإنشائية', ...items.map(p=>p.valueAED?fmtAED(p.valueAED):'—')],
+    ['حالة المتابعة', ...items.map(p=>statusLabel(getStatus(p.id))||'—')],
+  ];
+  document.getElementById('compareTableWrap').innerHTML = `<table><tbody>${
+    rows.map(r=>`<tr>${r.map((c,i)=>`<${i===0?'th':'td'}>${c}</${i===0?'th':'td'}>`).join('')}</tr>`).join('')
+  }</tbody></table>`;
+  document.getElementById('compareModalBackdrop').classList.add('show');
+}
+document.getElementById('compareOpenBtn').addEventListener('click', openCompareModal);
+document.getElementById('compareCloseBtn').addEventListener('click', ()=> document.getElementById('compareModalBackdrop').classList.remove('show'));
+document.getElementById('compareModalBackdrop').addEventListener('click', (e)=>{ if(e.target.id==='compareModalBackdrop') e.currentTarget.classList.remove('show'); });
+document.getElementById('compareClearBtn').addEventListener('click', ()=>{ compareIds=[]; updateCompareBar(); renderAll(); });
+
+/* ============ الخط الزمني ============ */
+function renderTimeline(results){
+  const track = document.getElementById('timelineTrack');
+  if(!track) return;
+  const sorted = [...results].sort((a,b)=> monthsToHandover(a.p.handover) - monthsToHandover(b.p.handover));
+  track.innerHTML = sorted.map(r=>{
+    const p=r.p, sc=r.sc, m = monthsToHandover(p.handover);
+    return `<div class="timeline-item" data-id="${p.id}">
+      <div class="tl-score" style="background:${scoreColor(sc.total)}">${sc.total}</div>
+      <div class="tl-months">${m>=0?('خلال '+m+' شهر'):'تم التسليم'} · ${p.handover||'—'}</div>
+      <div class="tl-name">${p.name}</div>
+      <div class="tl-meta">${p.developer} · ${p.area}</div>
+    </div>`;
+  }).join('') || '<div style="color:var(--muted);padding:20px;">لا توجد مشاريع مطابقة</div>';
+  track.querySelectorAll('.timeline-item').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const p = PROJECTS.find(x=>x.id==el.dataset.id);
+      const r = sorted.find(r=>r.p.id==el.dataset.id);
+      if(p && r) selectProject(p, r.sc);
+    });
+  });
+}
+
+/* ============ تصدير CSV ============ */
+document.getElementById('btnExport').addEventListener('click', ()=>{
+  if(!lastResults.length){ alert('لا توجد نتائج لتصديرها'); return; }
+  const headers = ['الاسم','المطوّر','المنطقة','الإمارة','النوع','Score','موعد التسليم','سعر البداية','القيمة الإنشائية','حالة المتابعة'];
+  const rows = lastResults.map(r=>{
+    const p=r.p, sc=r.sc;
+    return [p.name, p.developer, p.area, p.emirate==='dubai'?'دبي':'أبوظبي', typeLabel(p.type), sc.total, p.handover||'', p.priceFrom||'', p.valueAED||'', statusLabel(getStatus(p.id))]
+      .map(v=> `"${String(v??'').replace(/"/g,'""')}"`).join(',');
+  });
+  const csv = '\uFEFF' + headers.join(',') + '\n' + rows.join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'radar-projects-'+new Date().toISOString().slice(0,10)+'.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+});
+
+/* ============ الخريطة الحرارية ============ */
+let heatOn = false;
+let heatLayer = null;
+document.getElementById('btnHeat').addEventListener('click', ()=>{
+  heatOn = !heatOn;
+  document.getElementById('btnHeat').classList.toggle('active', heatOn);
+  if(heatOn){
+    map.removeLayer(clusterGroup);
+    const pts = lastResults.map(r=> [r.p.lat, r.p.lng, Math.max(0.15, r.sc.total/100)]);
+    heatLayer = L.heatLayer(pts, {radius:32, blur:24, maxZoom:14, gradient:{0.2:'#e2665f',0.5:'#d4a24e',0.8:'#5fbf7e',1:'#3fd17e'}}).addTo(map);
+  } else {
+    if(heatLayer){ map.removeLayer(heatLayer); heatLayer=null; }
+    map.addLayer(clusterGroup);
+  }
+});
 function typeLabel(t){ return t==='villa'?'فلل/تاون هاوس': t==='apartment'?'أبراج سكنية':'تجاري/مكاتب'; }
 
 /* ============ لوحة التفاصيل ============ */
@@ -689,6 +1002,14 @@ function selectProject(p, sc){
       <div class="d-badge">${typeLabel(p.type)} · ${p.segment}</div>
       <h2 class="d-title">${p.name}</h2>
       <div class="d-sub">${p.developer} · ${p.area}، ${p.emirate==='dubai'?'دبي':'أبوظبي'}</div>
+      <select class="status-select" id="statusSelect">
+        <option value="">حالة المتابعة: لم تُحدَّد</option>
+        <option value="spotted" ${getStatus(p.id)==='spotted'?'selected':''}>مرصود</option>
+        <option value="contacted" ${getStatus(p.id)==='contacted'?'selected':''}>تم التواصل</option>
+        <option value="quoted" ${getStatus(p.id)==='quoted'?'selected':''}>عرض سعر</option>
+        <option value="won" ${getStatus(p.id)==='won'?'selected':''}>فوز</option>
+        <option value="lost" ${getStatus(p.id)==='lost'?'selected':''}>خسارة</option>
+      </select>
     </div>
     <div class="d-score-box">
       <div class="d-score-num">${sc.total}</div>
@@ -737,6 +1058,8 @@ function selectProject(p, sc){
   document.getElementById('detailBackdrop').classList.add('show');
   const closeBtn = document.getElementById('detailCloseBtn');
   if(closeBtn) closeBtn.addEventListener('click', closeDetailMobile);
+  const statusSelect = document.getElementById('statusSelect');
+  if(statusSelect) statusSelect.addEventListener('change', ()=>{ setStatus(p.id, statusSelect.value); renderAll(); });
 }
 function closeDetailMobile(){
   document.getElementById('detailPanel').classList.remove('open');
@@ -805,20 +1128,62 @@ map.on('click', (e)=>{
   renderAll();
 });
 
-/* ============ تبديل عرض خريطة/قائمة ============ */
-document.getElementById('btn-map').addEventListener('click', ()=>{
-  document.getElementById('btn-map').classList.add('active');
-  document.getElementById('btn-list').classList.remove('active');
-  document.getElementById('map').classList.remove('hide');
-  document.getElementById('listView').classList.remove('show');
-  setTimeout(()=>map.invalidateSize(), 50);
-});
-document.getElementById('btn-list').addEventListener('click', ()=>{
-  document.getElementById('btn-list').classList.add('active');
-  document.getElementById('btn-map').classList.remove('active');
-  document.getElementById('map').classList.add('hide');
-  document.getElementById('listView').classList.add('show');
-});
+/* ============ تبديل عرض خريطة/قائمة/الخط الزمني ============ */
+function switchView(which){
+  document.getElementById('btn-map').classList.toggle('active', which==='map');
+  document.getElementById('btn-list').classList.toggle('active', which==='list');
+  document.getElementById('btn-timeline').classList.toggle('active', which==='timeline');
+  document.getElementById('map').classList.toggle('hide', which!=='map');
+  document.getElementById('listView').classList.toggle('show', which==='list');
+  document.getElementById('timelineView').classList.toggle('show', which==='timeline');
+  if(which==='map') setTimeout(()=>map.invalidateSize(), 50);
+}
+document.getElementById('btn-map').addEventListener('click', ()=> switchView('map'));
+document.getElementById('btn-list').addEventListener('click', ()=> switchView('list'));
+document.getElementById('btn-timeline').addEventListener('click', ()=> switchView('timeline'));
+
+document.getElementById('searchBox').addEventListener('input', ()=> renderAll());
+document.getElementById('favOnly').addEventListener('change', ()=> renderAll());
+
+/* ============ التعريف الأولي (Onboarding) ============ */
+const ONBOARD_SLIDES = [
+  {t:'أهلًا بك في رادار', d:'أداة اكتشاف فرص التشطيبات الداخلية في الإمارات. راقب أفضل الفرص أولًا بأول.'},
+  {t:'خصّص الأوزان', d:'من لوحة الفلاتر عدّل أوزان التوقيت، احتمال التوريد، القرب الجغرافي، ونوع المشروع — والـ Score يتغيّر فورًا.'},
+  {t:'قارن وتابع', d:'حدّد ⭐ للمفضلة، وحدّد مربّع المقارنة لمقارنة حتى 3 مشاريع جنبًا لجنب، وتابع حالة كل فرصة من مرصود حتى فوز/خسارة.'},
+];
+let onboardIdx = 0;
+function renderOnboardSlide(){
+  const s = ONBOARD_SLIDES[onboardIdx];
+  const last = onboardIdx === ONBOARD_SLIDES.length-1;
+  document.getElementById('onboardCard').innerHTML = `
+    <h3>${s.t}</h3>
+    <p>${s.d}</p>
+    <div class="onboard-dots">${ONBOARD_SLIDES.map((_,i)=>`<span class="${i===onboardIdx?'active':''}"></span>`).join('')}</div>
+    <div class="ob-actions" style="margin-top:16px;">
+      <button class="ob-skip" id="obSkip">تخطي</button>
+      <button id="obNext">${last?'ابدأ':'التالي'}</button>
+    </div>`;
+  document.getElementById('obSkip').addEventListener('click', closeOnboarding);
+  document.getElementById('obNext').addEventListener('click', ()=>{
+    if(last) closeOnboarding(); else { onboardIdx++; renderOnboardSlide(); }
+  });
+}
+function closeOnboarding(){
+  document.getElementById('onboardBackdrop').classList.remove('show');
+  try{ localStorage.setItem('radar_onboarded','1'); }catch(e){}
+}
+try{
+  if(!localStorage.getItem('radar_onboarded')){
+    renderOnboardSlide();
+    document.getElementById('onboardBackdrop').classList.add('show');
+  }
+}catch(e){}
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
 
 loadLiveData();
 </script>
