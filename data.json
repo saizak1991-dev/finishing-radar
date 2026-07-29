@@ -441,8 +441,42 @@
       "units": 88,
       "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
+    },
+    {
+      "id": 27,
+      "name": "Como Residences",
+      "developer": "Nakheel",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "نخلة جميرا",
+      "lat": 25.118,
+      "lng": 55.138,
+      "handover": "2027-Q3",
+      "priceFrom": 21000000,
+      "devClass": "major",
+      "units": 76,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 28,
+      "name": "Nawayef West",
+      "developer": "Modon Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة الحديريات",
+      "lat": 24.426,
+      "lng": 54.368,
+      "handover": "2027-Q4",
+      "priceFrom": 6000000,
+      "devClass": "major",
+      "units": null,
+      "valueAED": null,
+      "source": "Bayut — مشاريع أبوظبي الجديدة"
     }
   ],
-  "generated_at": "2026-07-29T05:08:46.768Z",
+  "generated_at": "2026-07-29T10:14:34.544Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
