@@ -475,8 +475,42 @@
       "units": null,
       "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
+    },
+    {
+      "id": 29,
+      "name": "Rixos Financial Centre Road Residences",
+      "developer": "East & West Properties",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "وسط مدينة دبي",
+      "lat": 25.1985,
+      "lng": 55.2798,
+      "handover": "2027-Q2",
+      "priceFrom": 2600000,
+      "devClass": "major",
+      "units": 345,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 30,
+      "name": "Fahid Island Villas",
+      "developer": "Modon Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة فهيد",
+      "lat": 24.5712,
+      "lng": 54.5124,
+      "handover": "2028-Q2",
+      "priceFrom": 4500000,
+      "devClass": "major",
+      "units": null,
+      "valueAED": null,
+      "source": "Bayut — مشاريع أبوظبي الجديدة"
     }
   ],
-  "generated_at": "2026-07-29T10:14:34.544Z",
+  "generated_at": "2026-07-30T09:38:15.188Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
