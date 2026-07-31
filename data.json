@@ -594,8 +594,42 @@
       "units": 283,
       "valueAED": null,
       "source": "Al Habtoor Group — الإعلانات الرسمية"
+    },
+    {
+      "id": 36,
+      "name": "Athlon by Aldar",
+      "developer": "Aldar Properties",
+      "type": "villa",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.0712,
+      "lng": 55.321,
+      "handover": "2028-Q2",
+      "priceFrom": 2800000,
+      "devClass": "major",
+      "units": 1492,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 37,
+      "name": "Palm Jebel Ali Villas",
+      "developer": "Nakheel",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "نخلة جبل علي",
+      "lat": 24.9812,
+      "lng": 54.9915,
+      "handover": "2027-Q4",
+      "priceFrom": 18000000,
+      "devClass": "major",
+      "units": null,
+      "valueAED": null,
+      "source": "Nakheel — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-07-31T10:06:11.211Z",
+  "generated_at": "2026-07-31T17:13:06.750Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
