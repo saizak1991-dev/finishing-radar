@@ -713,8 +713,42 @@
       "units": 1900,
       "valueAED": null,
       "source": "Damac Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 43,
+      "name": "Damac Sun City",
+      "developer": "Damac Properties",
+      "type": "villa",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.0412,
+      "lng": 55.3615,
+      "handover": "2028-Q2",
+      "priceFrom": 2250000,
+      "devClass": "major",
+      "units": 1200,
+      "valueAED": null,
+      "source": "Damac Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 44,
+      "name": "Muraba Veil",
+      "developer": "Muraba",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "شارع الوصل",
+      "lat": 25.1912,
+      "lng": 55.2531,
+      "handover": "2028-Q4",
+      "priceFrom": 18000000,
+      "devClass": "boutique",
+      "units": 138,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
     }
   ],
-  "generated_at": "2026-08-06T02:29:19.577Z",
+  "generated_at": "2026-08-06T14:06:52.952Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
