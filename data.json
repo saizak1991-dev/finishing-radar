@@ -679,8 +679,42 @@
       "units": 296,
       "valueAED": null,
       "source": "Nakheel — الإعلانات الرسمية"
+    },
+    {
+      "id": 41,
+      "name": "Azizi Venice",
+      "developer": "Azizi Developments",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "دبي الجنوب",
+      "lat": 24.8821,
+      "lng": 55.1534,
+      "handover": "2027-Q4",
+      "priceFrom": 580000,
+      "devClass": "major",
+      "units": 30000,
+      "valueAED": 30000000000,
+      "source": "Azizi Developments — الإعلانات الرسمية"
+    },
+    {
+      "id": 42,
+      "name": "Damac Riverside",
+      "developer": "Damac Properties",
+      "type": "villa",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "مجمع مجمع دبي للإستثمار",
+      "lat": 24.9751,
+      "lng": 55.1823,
+      "handover": "2028-Q1",
+      "priceFrom": 1990000,
+      "devClass": "major",
+      "units": 1900,
+      "valueAED": null,
+      "source": "Damac Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-05T14:07:16.946Z",
+  "generated_at": "2026-08-06T02:29:19.577Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
