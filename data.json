@@ -747,8 +747,42 @@
       "units": 138,
       "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 45,
+      "name": "The Heights Country Club",
+      "developer": "Emaar Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "دبي الجنوب",
+      "lat": 24.912,
+      "lng": 55.215,
+      "handover": "2028-Q3",
+      "priceFrom": 3500000,
+      "devClass": "major",
+      "units": 1500,
+      "valueAED": 55000000000,
+      "source": "Emaar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 46,
+      "name": "Mandarin Oriental Residences",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة السعديات",
+      "lat": 24.536,
+      "lng": 54.428,
+      "handover": "2028-Q2",
+      "priceFrom": 11000000,
+      "devClass": "major",
+      "units": 226,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-06T14:06:52.952Z",
+  "generated_at": "2026-08-07T02:37:15.777Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
