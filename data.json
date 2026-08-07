@@ -781,8 +781,42 @@
       "units": 226,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 47,
+      "name": "Riverside Crescent",
+      "developer": "Sobha Realty",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "Sobha Hartland II",
+      "lat": 25.1785,
+      "lng": 55.3341,
+      "handover": "2027-Q2",
+      "priceFrom": 1500000,
+      "devClass": "major",
+      "units": 1100,
+      "valueAED": null,
+      "source": "Sobha Realty — الإعلانات الرسمية"
+    },
+    {
+      "id": 48,
+      "name": "Louvre Abu Dhabi Residences",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة السعديات",
+      "lat": 24.5338,
+      "lng": 54.3982,
+      "handover": "2026-Q3",
+      "priceFrom": 3200000,
+      "devClass": "major",
+      "units": 400,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-07T02:37:15.777Z",
+  "generated_at": "2026-08-07T13:01:13.969Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
