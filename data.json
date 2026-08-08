@@ -815,8 +815,42 @@
       "units": 400,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 49,
+      "name": "Burj Azizi",
+      "developer": "Azizi Developments",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "شارع الشيخ زايد",
+      "lat": 25.2048,
+      "lng": 55.2708,
+      "handover": "2028-Q4",
+      "priceFrom": 2000000,
+      "devClass": "major",
+      "units": 2000,
+      "valueAED": 6000000000,
+      "source": "Azizi Developments — الإعلانات الرسمية"
+    },
+    {
+      "id": 50,
+      "name": "Yas Riva",
+      "developer": "Aldar Properties",
+      "type": "villa",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة ياس",
+      "lat": 24.512,
+      "lng": 54.591,
+      "handover": "2028-Q1",
+      "priceFrom": 4500000,
+      "devClass": "major",
+      "units": 292,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-07T13:01:13.969Z",
+  "generated_at": "2026-08-08T01:28:26.870Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
