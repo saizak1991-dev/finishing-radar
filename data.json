@@ -849,8 +849,42 @@
       "units": 292,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 51,
+      "name": "Binghatti Skyrise",
+      "developer": "Binghatti",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "الخليج التجاري",
+      "lat": 25.1831,
+      "lng": 55.2698,
+      "handover": "2026-Q4",
+      "priceFrom": 975000,
+      "devClass": "major",
+      "units": 3300,
+      "valueAED": null,
+      "source": "Binghatti — الإعلانات الرسمية"
+    },
+    {
+      "id": 52,
+      "name": "Fahid Beach Residences",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة فهيد",
+      "lat": 24.575,
+      "lng": 54.518,
+      "handover": "2028-Q3",
+      "priceFrom": 3200000,
+      "devClass": "major",
+      "units": 652,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-10T13:05:24.768Z",
+  "generated_at": "2026-08-11T01:40:39.752Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
