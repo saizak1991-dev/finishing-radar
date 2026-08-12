@@ -883,8 +883,25 @@
       "units": 652,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 53,
+      "name": "Baccarat Residences",
+      "developer": "Shamal Holding",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "وسط مدينة دبي",
+      "lat": 25.1952,
+      "lng": 55.2781,
+      "handover": "2027-Q4",
+      "priceFrom": 18000000,
+      "devClass": "major",
+      "units": 144,
+      "valueAED": null,
+      "source": "Shamal Holding — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-11T01:40:39.752Z",
+  "generated_at": "2026-08-12T01:51:55.689Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
