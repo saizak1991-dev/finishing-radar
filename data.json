@@ -900,8 +900,42 @@
       "units": 144,
       "valueAED": null,
       "source": "Shamal Holding — الإعلانات الرسمية"
+    },
+    {
+      "id": 54,
+      "name": "Damac Islands",
+      "developer": "Damac Properties",
+      "type": "villa",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.021,
+      "lng": 55.378,
+      "handover": "2028-Q4",
+      "priceFrom": 2600000,
+      "devClass": "major",
+      "units": 3500,
+      "valueAED": null,
+      "source": "Damac Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 55,
+      "name": "Nouran Living",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة ياس",
+      "lat": 24.4912,
+      "lng": 54.6015,
+      "handover": "2027-Q4",
+      "priceFrom": 750000,
+      "devClass": "major",
+      "units": 372,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-12T01:51:55.689Z",
+  "generated_at": "2026-08-12T13:06:52.981Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
