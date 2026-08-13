@@ -934,8 +934,42 @@
       "units": 372,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 56,
+      "name": "Sobha Reserve",
+      "developer": "Sobha Realty",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "وادي الصفا 2",
+      "lat": 25.0931,
+      "lng": 55.3412,
+      "handover": "2026-Q3",
+      "priceFrom": 7700000,
+      "devClass": "major",
+      "units": 300,
+      "valueAED": null,
+      "source": "Sobha Realty — الإعلانات الرسمية"
+    },
+    {
+      "id": 57,
+      "name": "Valo at Dubai Creek Harbour",
+      "developer": "Emaar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "خور دبي",
+      "lat": 25.2041,
+      "lng": 55.3562,
+      "handover": "2028-Q3",
+      "priceFrom": 1790000,
+      "devClass": "major",
+      "units": 280,
+      "valueAED": null,
+      "source": "Emaar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-13T01:53:48.755Z",
+  "generated_at": "2026-08-13T13:08:45.264Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
 }
