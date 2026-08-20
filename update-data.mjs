@@ -14,6 +14,10 @@ if (!GEMINI_API_KEY) {
 const MODEL = "gemini-flash-latest";
 const DATA_FILE = "data.json";
 
+// إعدادات إعادة المحاولة عند ازدحام Gemini (503) أو تجاوز الحصة (429)
+const MAX_RETRIES = 4;
+const BASE_DELAY_MS = 5000; // 5 ثوانٍ، تتضاعف مع كل محاولة (5s, 10s, 20s, 40s)
+
 const SEARCH_QUERIES = [
   "مشاريع عقارية جديدة دبي 2026",
   "مشاريع عقارية جديدة أبوظبي 2026",
@@ -21,20 +25,59 @@ const SEARCH_QUERIES = [
   "Abu Dhabi off-plan projects handover update 2026",
 ];
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function duckDuckGoSearch(query) {
   const url = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
   const res = await fetch(url, {
-    headers: { "User-Agent": "Mozilla/5.0 (compatible; finishing-radar-bot/1.0)" },
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    },
   });
-  if (!res.ok) return [];
+  if (!res.ok) {
+    console.warn(`DuckDuckGo رد بحالة غير ناجحة (${res.status}) للاستعلام: ${query}`);
+    return [];
+  }
   const html = await res.text();
+
+  // بنية DuckDuckGo HTML قد تتغيّر بمرور الوقت. نحاول عدة أنماط بالترتيب.
   const results = [];
-  const re = /<a[^>]*class="result__a"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?<a[^>]*class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g;
+
+  // النمط الأساسي (الحالي وقت كتابة هذا السكربت)
+  const pattern1 =
+    /<a[^>]*class="[^"]*result__a[^"]*"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?class="[^"]*result__snippet[^"]*"[^>]*>([\s\S]*?)<\/a>/g;
+
+  // نمط احتياطي أوسع: يلتقط أي رابط نتيجة + أقرب نص وصفي بعده
+  const pattern2 =
+    /<a[^>]*class="[^"]*result__url[^"]*"[^>]*href="([^"]+)"[\s\S]*?<a[^>]*class="[^"]*result__snippet[^"]*"[^>]*>([\s\S]*?)<\/a>/g;
+
+  const strip = (s) =>
+    s
+      .replace(/<[^>]+>/g, "")
+      .replace(/&amp;/g, "&")
+      .replace(/&#x27;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/\s+/g, " ")
+      .trim();
+
   let m;
-  while ((m = re.exec(html)) && results.length < 5) {
-    const strip = (s) => s.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#x27;/g, "'").trim();
+  while ((m = pattern1.exec(html)) && results.length < 5) {
     results.push({ title: strip(m[2]), snippet: strip(m[3]), url: m[1] });
   }
+
+  if (results.length === 0) {
+    while ((m = pattern2.exec(html)) && results.length < 5) {
+      results.push({ title: "", snippet: strip(m[2]), url: m[1] });
+    }
+  }
+
+  if (results.length === 0) {
+    console.warn(`لم يُعثر على نتائج قابلة للاستخراج من DuckDuckGo للاستعلام: ${query} (قد تكون بنية الصفحة تغيّرت)`);
+  }
+
   return results;
 }
 
@@ -79,7 +122,7 @@ ${JSON.stringify(existingProjects)}
 أجب حصرًا بمصفوفة JSON صالحة للمشاريع (بدون أي نص تمهيدي، بدون Markdown، بدون علامات backticks) — فقط: [ {...}, {...} ]`;
 }
 
-async function callGemini(prompt) {
+async function callGeminiOnce(prompt) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -89,15 +132,41 @@ async function callGemini(prompt) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
+
   if (!res.ok) {
     const errText = await res.text();
-    throw new Error(`Gemini HTTP ${res.status}: ${errText}`);
+    const err = new Error(`Gemini HTTP ${res.status}: ${errText}`);
+    err.status = res.status;
+    throw err;
   }
+
   const data = await res.json();
   const parts = data?.candidates?.[0]?.content?.parts ?? [];
   const text = parts.map((p) => p.text || "").filter(Boolean).join("\n");
   if (!text) throw new Error("رد Gemini لا يحتوي على نص");
   return text;
+}
+
+// يعيد المحاولة عند 503 (ازدحام) أو 429 (تجاوز حصة) أو أخطاء شبكة عابرة
+async function callGeminiWithRetry(prompt) {
+  let lastErr;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      return await callGeminiOnce(prompt);
+    } catch (e) {
+      lastErr = e;
+      const retryable = e.status === 503 || e.status === 429 || !e.status;
+      if (!retryable || attempt === MAX_RETRIES) {
+        throw e;
+      }
+      const delay = BASE_DELAY_MS * 2 ** (attempt - 1);
+      console.warn(
+        `محاولة ${attempt}/${MAX_RETRIES} فشلت (${e.message}). إعادة المحاولة بعد ${delay / 1000} ثانية...`
+      );
+      await sleep(delay);
+    }
+  }
+  throw lastErr;
 }
 
 function extractJsonArray(text) {
@@ -119,7 +188,7 @@ async function main() {
   console.log(`تم جمع سياق البحث (${searchContext.length} حرف).`);
 
   const prompt = buildPrompt(existing, searchContext);
-  const text = await callGemini(prompt);
+  const text = await callGeminiWithRetry(prompt);
   const projects = extractJsonArray(text);
 
   const payload = {
