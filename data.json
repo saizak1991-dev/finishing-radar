@@ -316,7 +316,7 @@
       "area": "الشامخة",
       "lat": 24.502,
       "lng": 54.648,
-      "handover": "2026-Q2",
+      "handover": "2026-Q1",
       "priceFrom": 365000,
       "devClass": "major",
       "units": 1050,
@@ -1019,8 +1019,25 @@
       "units": 638,
       "valueAED": null,
       "source": "Sobha Realty — الإعلانات الرسمية"
+    },
+    {
+      "id": 61,
+      "name": "Binghatti Amber Hall",
+      "developer": "Binghatti",
+      "type": "apartment",
+      "segment": "متوسط",
+      "emirate": "dubai",
+      "area": "قرية جميرا الدائرية",
+      "lat": 25.0565,
+      "lng": 55.2091,
+      "handover": "2026-Q4",
+      "priceFrom": 650000,
+      "devClass": "major",
+      "units": 240,
+      "valueAED": null,
+      "source": "dubizzle — مشاريع دبي الجديدة"
     }
   ],
-  "generated_at": "2026-08-15T12:35:11.360Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-flash-latest)."
+  "generated_at": "2026-08-21T13:42:14.211Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
