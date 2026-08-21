@@ -11,10 +11,9 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-// قائمة الموديلات المستقرة (stable) فقط — تم تعمّد استبعاد "gemini-flash-latest" لأنه
-// يشير لموديل تجريبي (experimental) بحدود معدل أكثر تقييدًا، وهو السبب الأرجح للازدحام المستمر (503).
-// عند فشل موديل معيّن بعد كل محاولاته بسبب 503/429، ينتقل السكربت تلقائيًا للموديل التالي في القائمة.
-const MODELS = ["gemini-2.5-flash", "gemini-3.5-flash"];
+// قائمة الموديلات المستقرة (stable). "gemini-2.5-flash" و"gemini-flash-latest" لم يعودا متاحين
+// لمفاتيح API الجديدة (رسالة خطأ 404 من جوجل نفسها توصي بالانتقال إلى gemini-3.6-flash).
+const MODELS = ["gemini-3.6-flash", "gemini-3.5-flash"];
 const DATA_FILE = "data.json";
 
 // إعدادات إعادة المحاولة لكل موديل عند ازدحام Gemini (503) أو تجاوز الحصة (429)
@@ -151,7 +150,8 @@ async function callGeminiOnce(prompt, model) {
 }
 
 // لكل موديل في القائمة: يعيد المحاولة عدة مرات عند 503/429/خطأ شبكة.
-// إذا استنفد الموديل كل محاولاته، ينتقل تلقائيًا للموديل التالي (أقدم وأكثر استقرارًا عادة).
+// عند 404 (الموديل غير متاح لهذا المفتاح) ينتقل فورًا للموديل التالي دون إعادة محاولة.
+// إذا استنفد الموديل كل محاولاته لأسباب قابلة لإعادة المحاولة، ينتقل أيضًا للموديل التالي.
 async function callGeminiWithRetry(prompt) {
   let lastErr;
   for (const model of MODELS) {
@@ -165,7 +165,11 @@ async function callGeminiWithRetry(prompt) {
       } catch (e) {
         lastErr = e;
         const retryable = e.status === 503 || e.status === 429 || !e.status;
-        if (!retryable) throw e;
+
+        if (!retryable) {
+          console.warn(`[${model}] خطأ غير قابل لإعادة المحاولة (${e.message}). الانتقال للموديل التالي إن وُجد...`);
+          break; // اخرج من حلقة المحاولات لهذا الموديل، وانتقل للموديل التالي في الحلقة الخارجية
+        }
 
         if (attempt < MAX_RETRIES_PER_MODEL) {
           const delay = BASE_DELAY_MS * 2 ** (attempt - 1);
