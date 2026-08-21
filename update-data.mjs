@@ -11,12 +11,15 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-const MODEL = "gemini-flash-latest";
+// قائمة الموديلات المستقرة (stable) فقط — تم تعمّد استبعاد "gemini-flash-latest" لأنه
+// يشير لموديل تجريبي (experimental) بحدود معدل أكثر تقييدًا، وهو السبب الأرجح للازدحام المستمر (503).
+// عند فشل موديل معيّن بعد كل محاولاته بسبب 503/429، ينتقل السكربت تلقائيًا للموديل التالي في القائمة.
+const MODELS = ["gemini-2.5-flash", "gemini-3.5-flash"];
 const DATA_FILE = "data.json";
 
-// إعدادات إعادة المحاولة عند ازدحام Gemini (503) أو تجاوز الحصة (429)
-const MAX_RETRIES = 4;
-const BASE_DELAY_MS = 5000; // 5 ثوانٍ، تتضاعف مع كل محاولة (5s, 10s, 20s, 40s)
+// إعدادات إعادة المحاولة لكل موديل عند ازدحام Gemini (503) أو تجاوز الحصة (429)
+const MAX_RETRIES_PER_MODEL = 3;
+const BASE_DELAY_MS = 5000; // 5 ثوانٍ، تتضاعف مع كل محاولة (5s, 10s, 20s)
 
 const SEARCH_QUERIES = [
   "مشاريع عقارية جديدة دبي 2026",
@@ -122,8 +125,8 @@ ${JSON.stringify(existingProjects)}
 أجب حصرًا بمصفوفة JSON صالحة للمشاريع (بدون أي نص تمهيدي، بدون Markdown، بدون علامات backticks) — فقط: [ {...}, {...} ]`;
 }
 
-async function callGeminiOnce(prompt) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`;
+async function callGeminiOnce(prompt, model) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
   };
@@ -147,23 +150,33 @@ async function callGeminiOnce(prompt) {
   return text;
 }
 
-// يعيد المحاولة عند 503 (ازدحام) أو 429 (تجاوز حصة) أو أخطاء شبكة عابرة
+// لكل موديل في القائمة: يعيد المحاولة عدة مرات عند 503/429/خطأ شبكة.
+// إذا استنفد الموديل كل محاولاته، ينتقل تلقائيًا للموديل التالي (أقدم وأكثر استقرارًا عادة).
 async function callGeminiWithRetry(prompt) {
   let lastErr;
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      return await callGeminiOnce(prompt);
-    } catch (e) {
-      lastErr = e;
-      const retryable = e.status === 503 || e.status === 429 || !e.status;
-      if (!retryable || attempt === MAX_RETRIES) {
-        throw e;
+  for (const model of MODELS) {
+    for (let attempt = 1; attempt <= MAX_RETRIES_PER_MODEL; attempt++) {
+      try {
+        const text = await callGeminiOnce(prompt, model);
+        if (model !== MODELS[0]) {
+          console.log(`نجح الطلب باستخدام الموديل الاحتياطي: ${model}`);
+        }
+        return { text, model };
+      } catch (e) {
+        lastErr = e;
+        const retryable = e.status === 503 || e.status === 429 || !e.status;
+        if (!retryable) throw e;
+
+        if (attempt < MAX_RETRIES_PER_MODEL) {
+          const delay = BASE_DELAY_MS * 2 ** (attempt - 1);
+          console.warn(
+            `[${model}] محاولة ${attempt}/${MAX_RETRIES_PER_MODEL} فشلت (${e.message}). إعادة المحاولة بعد ${delay / 1000} ثانية...`
+          );
+          await sleep(delay);
+        } else {
+          console.warn(`[${model}] استُنفدت كل المحاولات (${e.message}).`);
+        }
       }
-      const delay = BASE_DELAY_MS * 2 ** (attempt - 1);
-      console.warn(
-        `محاولة ${attempt}/${MAX_RETRIES} فشلت (${e.message}). إعادة المحاولة بعد ${delay / 1000} ثانية...`
-      );
-      await sleep(delay);
     }
   }
   throw lastErr;
@@ -181,20 +194,20 @@ function extractJsonArray(text) {
 
 async function main() {
   const existing = loadExistingProjects();
-  console.log(`جاري التحديث عبر Gemini (${MODEL})... عدد المشاريع الحالية: ${existing.length}`);
+  console.log(`جاري التحديث عبر Gemini (${MODELS.join(" → ")})... عدد المشاريع الحالية: ${existing.length}`);
 
   console.log("جاري البحث الحي (DuckDuckGo)...");
   const searchContext = await gatherLiveSearchContext();
   console.log(`تم جمع سياق البحث (${searchContext.length} حرف).`);
 
   const prompt = buildPrompt(existing, searchContext);
-  const text = await callGeminiWithRetry(prompt);
+  const { text, model: usedModel } = await callGeminiWithRetry(prompt);
   const projects = extractJsonArray(text);
 
   const payload = {
     projects,
     generated_at: new Date().toISOString(),
-    source_note: `محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (${MODEL}).`,
+    source_note: `محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (${usedModel}).`,
   };
 
   writeFileSync(DATA_FILE, JSON.stringify(payload, null, 2), "utf8");
