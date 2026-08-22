@@ -1036,8 +1036,42 @@
       "units": 240,
       "valueAED": null,
       "source": "dubizzle — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 62,
+      "name": "Six Senses Residences The Palm",
+      "developer": "Select Group",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "نخلة جميرا",
+      "lat": 25.128,
+      "lng": 55.121,
+      "handover": "2026-Q2",
+      "priceFrom": 9400000,
+      "devClass": "major",
+      "units": 162,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 63,
+      "name": "Nawayef Heights",
+      "developer": "Modon Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة الحديريات",
+      "lat": 24.421,
+      "lng": 54.362,
+      "handover": "2027-Q4",
+      "priceFrom": 7200000,
+      "devClass": "major",
+      "units": 180,
+      "valueAED": null,
+      "source": "Bayut — مشاريع أبوظبي الجديدة"
     }
   ],
-  "generated_at": "2026-08-22T01:10:52.175Z",
+  "generated_at": "2026-08-22T12:37:04.967Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
