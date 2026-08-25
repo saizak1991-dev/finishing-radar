@@ -1070,8 +1070,42 @@
       "units": 180,
       "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
+    },
+    {
+      "id": 64,
+      "name": "Yas Golf Collection",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة ياس",
+      "lat": 24.4935,
+      "lng": 54.6082,
+      "handover": "2026-Q3",
+      "priceFrom": 1200000,
+      "devClass": "major",
+      "units": 519,
+      "valueAED": null,
+      "source": "Bayut — مشاريع أبوظبي الجديدة"
+    },
+    {
+      "id": 65,
+      "name": "Renad Tower",
+      "developer": "Tiger Properties",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة الريم",
+      "lat": 24.4988,
+      "lng": 54.4085,
+      "handover": "2026-Q4",
+      "priceFrom": 899000,
+      "devClass": "boutique",
+      "units": 350,
+      "valueAED": null,
+      "source": "Property Finder — مشاريع أبوظبي"
     }
   ],
-  "generated_at": "2026-08-25T01:13:56.428Z",
+  "generated_at": "2026-08-25T12:45:25.217Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
