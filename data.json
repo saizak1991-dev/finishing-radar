@@ -316,7 +316,7 @@
       "area": "الشامخة",
       "lat": 24.502,
       "lng": 54.648,
-      "handover": "2026-Q4",
+      "handover": "2026-Q3",
       "priceFrom": 365000,
       "devClass": "major",
       "units": 1050,
@@ -384,7 +384,7 @@
       "area": "جزيرة السعديات",
       "lat": 24.5372,
       "lng": 54.4481,
-      "handover": "2026-Q4",
+      "handover": "2026-Q3",
       "priceFrom": 6200000,
       "devClass": "major",
       "units": 2075,
@@ -1104,8 +1104,25 @@
       "units": 350,
       "valueAED": null,
       "source": "Property Finder — مشاريع أبوظبي"
+    },
+    {
+      "id": 66,
+      "name": "Fay Alreeman II",
+      "developer": "Aldar Properties",
+      "type": "villa",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "الشامخة",
+      "lat": 24.51,
+      "lng": 54.655,
+      "handover": "2026-Q3",
+      "priceFrom": 2900000,
+      "devClass": "major",
+      "units": 550,
+      "valueAED": null,
+      "source": "Bayut — مشاريع أبوظبي الجديدة"
     }
   ],
-  "generated_at": "2026-08-26T01:15:06.587Z",
+  "generated_at": "2026-08-26T12:51:26.232Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
