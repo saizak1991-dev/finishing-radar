@@ -1121,8 +1121,42 @@
       "units": 550,
       "valueAED": null,
       "source": "Bayut — مشاريع أبوظبي الجديدة"
+    },
+    {
+      "id": 67,
+      "name": "Emaar Golf Lane",
+      "developer": "Emaar Properties",
+      "type": "villa",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "إعمار الجنوب",
+      "lat": 24.8965,
+      "lng": 55.162,
+      "handover": "2028-Q4",
+      "priceFrom": 2700000,
+      "devClass": "major",
+      "units": 350,
+      "valueAED": null,
+      "source": "Emaar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 68,
+      "name": "Damac Violet",
+      "developer": "Damac Properties",
+      "type": "villa",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.0425,
+      "lng": 55.362,
+      "handover": "2027-Q3",
+      "priceFrom": 1870000,
+      "devClass": "major",
+      "units": 600,
+      "valueAED": null,
+      "source": "Damac Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-27T07:42:23.728Z",
+  "generated_at": "2026-08-27T21:50:13.159Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
