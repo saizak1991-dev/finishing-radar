@@ -1155,8 +1155,42 @@
       "units": 600,
       "valueAED": null,
       "source": "Damac Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 69,
+      "name": "Safa Two by de GRISOGONO",
+      "developer": "Damac Properties",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "شارع الشيخ زايد",
+      "lat": 25.1872,
+      "lng": 55.2581,
+      "handover": "2027-Q1",
+      "priceFrom": 1750000,
+      "devClass": "major",
+      "units": 1200,
+      "valueAED": null,
+      "source": "Damac Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 70,
+      "name": "Fahid Island Villas Phase 2",
+      "developer": "Aldar Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة فهيد",
+      "lat": 24.573,
+      "lng": 54.515,
+      "handover": "2028-Q3",
+      "priceFrom": 5500000,
+      "devClass": "major",
+      "units": 400,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-28T09:43:57.124Z",
+  "generated_at": "2026-08-28T21:46:00.673Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
