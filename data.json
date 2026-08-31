@@ -1189,8 +1189,42 @@
       "units": 400,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 71,
+      "name": "Tiger Sky Tower",
+      "developer": "Tiger Properties",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "الخليج التجاري",
+      "lat": 25.189,
+      "lng": 55.265,
+      "handover": "2029-Q2",
+      "priceFrom": 2200000,
+      "devClass": "major",
+      "units": 849,
+      "valueAED": 3670000000,
+      "source": "Tiger Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 72,
+      "name": "Binghatti Hills",
+      "developer": "Binghatti",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "مجمع دبي للعلوم",
+      "lat": 25.0682,
+      "lng": 55.2421,
+      "handover": "2026-Q3",
+      "priceFrom": 777000,
+      "devClass": "major",
+      "units": 1660,
+      "valueAED": null,
+      "source": "Binghatti — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-31T03:53:02.018Z",
+  "generated_at": "2026-08-31T18:49:45.756Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
