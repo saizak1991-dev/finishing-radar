@@ -1223,8 +1223,42 @@
       "units": 1660,
       "valueAED": null,
       "source": "Binghatti — الإعلانات الرسمية"
+    },
+    {
+      "id": 73,
+      "name": "The Ritz-Carlton Residences Creek",
+      "developer": "MAG",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "الجداف",
+      "lat": 25.215,
+      "lng": 55.335,
+      "handover": "2026-Q4",
+      "priceFrom": 15000000,
+      "devClass": "major",
+      "units": 200,
+      "valueAED": 5000000000,
+      "source": "MAG — الإعلانات الرسمية"
+    },
+    {
+      "id": 74,
+      "name": "Ramhan Island Villas",
+      "developer": "Eagle Hills",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة رمحان",
+      "lat": 24.561,
+      "lng": 54.492,
+      "handover": "2027-Q4",
+      "priceFrom": 6500000,
+      "devClass": "major",
+      "units": 1800,
+      "valueAED": null,
+      "source": "Eagle Hills — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-08-31T18:49:45.756Z",
+  "generated_at": "2026-09-01T03:45:40.068Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
