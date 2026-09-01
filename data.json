@@ -1257,8 +1257,42 @@
       "units": 1800,
       "valueAED": null,
       "source": "Eagle Hills — الإعلانات الرسمية"
+    },
+    {
+      "id": 75,
+      "name": "Ventana Residences",
+      "developer": "Deyaar",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "قرية جميرا الدائرية",
+      "lat": 25.0585,
+      "lng": 55.2088,
+      "handover": "2026-Q2",
+      "priceFrom": 750000,
+      "devClass": "boutique",
+      "units": 120,
+      "valueAED": null,
+      "source": "dubizzle — عقارات دبي يونيو 2026"
+    },
+    {
+      "id": 76,
+      "name": "Verella 3",
+      "developer": "Danube Properties",
+      "type": "apartment",
+      "segment": "متوسط",
+      "emirate": "dubai",
+      "area": "الفرجان",
+      "lat": 25.0392,
+      "lng": 55.1481,
+      "handover": "2026-Q2",
+      "priceFrom": 650000,
+      "devClass": "major",
+      "units": 250,
+      "valueAED": null,
+      "source": "dubizzle — عقارات دبي يونيو 2026"
     }
   ],
-  "generated_at": "2026-09-01T03:45:40.068Z",
+  "generated_at": "2026-09-01T16:07:53.005Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
