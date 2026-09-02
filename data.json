@@ -1291,8 +1291,42 @@
       "units": 250,
       "valueAED": null,
       "source": "dubizzle — عقارات دبي يونيو 2026"
+    },
+    {
+      "id": 77,
+      "name": "Al Murooj Phase 2",
+      "developer": "Emaar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "وسط مدينة دبي",
+      "lat": 25.2011,
+      "lng": 55.2754,
+      "handover": "2028-Q4",
+      "priceFrom": 2200000,
+      "devClass": "major",
+      "units": 450,
+      "valueAED": null,
+      "source": "Emaar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 78,
+      "name": "Siniya Island",
+      "developer": "Sobha Realty",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "جزيرة السنيّة",
+      "lat": 25.56,
+      "lng": 55.59,
+      "handover": "2028-Q2",
+      "priceFrom": 10500000,
+      "devClass": "major",
+      "units": 800,
+      "valueAED": null,
+      "source": "Sobha Realty — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-01T16:07:53.005Z",
+  "generated_at": "2026-09-02T03:04:03.621Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
