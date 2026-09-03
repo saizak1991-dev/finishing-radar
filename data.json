@@ -316,7 +316,7 @@
       "area": "الشامخة",
       "lat": 24.502,
       "lng": 54.648,
-      "handover": "2026-Q3",
+      "handover": "2026-Q1",
       "priceFrom": 365000,
       "devClass": "major",
       "units": 1050,
@@ -1325,8 +1325,42 @@
       "units": 800,
       "valueAED": null,
       "source": "Sobha Realty — الإعلانات الرسمية"
+    },
+    {
+      "id": 79,
+      "name": "The Acres",
+      "developer": "Meraas",
+      "type": "villa",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.0512,
+      "lng": 55.3214,
+      "handover": "2028-Q1",
+      "priceFrom": 5090000,
+      "devClass": "major",
+      "units": 1200,
+      "valueAED": null,
+      "source": "Meraas — الإعلانات الرسمية"
+    },
+    {
+      "id": 80,
+      "name": "The Waterway",
+      "developer": "Prestige One Developments",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "ميدان",
+      "lat": 25.162,
+      "lng": 55.301,
+      "handover": "2026-Q4",
+      "priceFrom": 1100000,
+      "devClass": "boutique",
+      "units": 180,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
     }
   ],
-  "generated_at": "2026-09-03T03:07:53.366Z",
+  "generated_at": "2026-09-03T15:51:44.177Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
