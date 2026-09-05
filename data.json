@@ -1325,8 +1325,42 @@
       "units": 180,
       "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 79,
+      "name": "Danube Sportz",
+      "developer": "Danube Properties",
+      "type": "apartment",
+      "segment": "متوسط",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.048,
+      "lng": 55.321,
+      "handover": "2027-Q2",
+      "priceFrom": 590000,
+      "devClass": "boutique",
+      "units": 1100,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 80,
+      "name": "Hudayriyat Island Beach Villas",
+      "developer": "Modon Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة الحديريات",
+      "lat": 24.415,
+      "lng": 54.358,
+      "handover": "2028-Q1",
+      "priceFrom": 8500000,
+      "devClass": "major",
+      "units": 300,
+      "valueAED": null,
+      "source": "Modon — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-04T15:49:38.671Z",
+  "generated_at": "2026-09-05T03:07:16.210Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
