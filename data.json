@@ -704,7 +704,7 @@
       "type": "villa",
       "segment": "فاخر",
       "emirate": "dubai",
-      "area": "مجمع مجمع دبي للإستثمار",
+      "area": "مجمع دبي للإستثمار",
       "lat": 24.9751,
       "lng": 55.1823,
       "handover": "2028-Q1",
@@ -1359,8 +1359,25 @@
       "units": 300,
       "valueAED": null,
       "source": "Modon — الإعلانات الرسمية"
+    },
+    {
+      "id": 81,
+      "name": "ذا وودز",
+      "developer": "Deyaar",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.085,
+      "lng": 55.338,
+      "handover": "2026-Q3",
+      "priceFrom": 850000,
+      "devClass": "boutique",
+      "units": 310,
+      "valueAED": null,
+      "source": "دوبيزل للعقارات — يوليو 2026"
     }
   ],
-  "generated_at": "2026-09-06T14:59:11.781Z",
+  "generated_at": "2026-09-07T03:05:13.192Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
