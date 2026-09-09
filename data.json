@@ -1393,8 +1393,42 @@
       "units": 200,
       "valueAED": null,
       "source": "dubizzle — مشاريع أبوظبي الجديدة"
+    },
+    {
+      "id": 83,
+      "name": "Reportage Village",
+      "developer": "Reportage Properties",
+      "type": "villa",
+      "segment": "متوسط",
+      "emirate": "dubai",
+      "area": "دبي لاند",
+      "lat": 25.041,
+      "lng": 55.385,
+      "handover": "2027-Q4",
+      "priceFrom": 1600000,
+      "devClass": "boutique",
+      "units": 1767,
+      "valueAED": null,
+      "source": "Reportage Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 84,
+      "name": "Plaza by Reportage",
+      "developer": "Reportage Properties",
+      "type": "apartment",
+      "segment": "اقتصادي-متوسط",
+      "emirate": "abudhabi",
+      "area": "مدينة مصدر",
+      "lat": 24.428,
+      "lng": 54.615,
+      "handover": "2026-Q4",
+      "priceFrom": 650000,
+      "devClass": "boutique",
+      "units": 348,
+      "valueAED": null,
+      "source": "Reportage Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-09T03:16:29.333Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
+  "generated_at": "2026-09-09T16:01:19.817Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
 }
