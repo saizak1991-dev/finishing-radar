@@ -1376,8 +1376,25 @@
       "units": 310,
       "valueAED": null,
       "source": "دوبيزل للعقارات — يوليو 2026"
+    },
+    {
+      "id": 82,
+      "name": "ذا سورس",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة السعديات",
+      "lat": 24.535,
+      "lng": 54.42,
+      "handover": "2026-Q3",
+      "priceFrom": 2300000,
+      "devClass": "major",
+      "units": 200,
+      "valueAED": null,
+      "source": "dubizzle — مشاريع أبوظبي الجديدة"
     }
   ],
-  "generated_at": "2026-09-08T16:03:20.867Z",
+  "generated_at": "2026-09-09T03:16:29.333Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
