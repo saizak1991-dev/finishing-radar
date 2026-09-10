@@ -1427,8 +1427,25 @@
       "units": 348,
       "valueAED": null,
       "source": "Reportage Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 85,
+      "name": "Madinat Al Arab Residences",
+      "developer": "Nakheel",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "مدينة العرب",
+      "lat": 24.975,
+      "lng": 55.012,
+      "handover": "2028-Q4",
+      "priceFrom": 1000000,
+      "devClass": "major",
+      "units": 450,
+      "valueAED": null,
+      "source": "دائرة الأراضي والأملاك — يوليو 2026"
     }
   ],
-  "generated_at": "2026-09-09T16:01:19.817Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
+  "generated_at": "2026-09-10T03:17:04.554Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
