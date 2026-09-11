@@ -623,7 +623,7 @@
       "lat": 24.9812,
       "lng": 54.9915,
       "handover": "2027-Q4",
-      "priceFrom": 18000000,
+      "priceFrom": 2700000,
       "devClass": "major",
       "units": 1200,
       "valueAED": null,
@@ -1446,6 +1446,6 @@
       "source": "دائرة الأراضي والأملاك — يوليو 2026"
     }
   ],
-  "generated_at": "2026-09-10T15:54:00.627Z",
+  "generated_at": "2026-09-11T03:12:06.671Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
