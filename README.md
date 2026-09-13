@@ -1,3 +1,7 @@
+## Summary
+
+"Finishing Radar" is a fully autonomous system that collects, analyzes, and updates data about finishing materials automatically in the background using the Gemini API, scheduled via GitHub Actions, and displayed on a static web interface via GitHub Pages — all without any manual intervention or chat interface.
+
 ## الملخص
 
 مشروع "رادار التشطيبات" هو نظام مستقل ويعمل ذاتياً لجمع وتحليل وتحديث بيانات التشطيبات تلقائياً في الخلفية باستخدام Gemini API وجدولتها عبر GitHub Actions، ثم عرضها في واجهة ويب ثابتة عبر GitHub Pages دون الحاجة لأي تدخل يدوي أو واجهة محادثة.
