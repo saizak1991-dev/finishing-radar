@@ -1375,7 +1375,7 @@
       "devClass": "boutique",
       "units": 310,
       "valueAED": null,
-      "source": "دوبيزل للعقارات — يوليو 2026"
+      "source": "دوبيزل للعقارات — مشاريع دبي"
     },
     {
       "id": 82,
@@ -1443,9 +1443,9 @@
       "devClass": "major",
       "units": 450,
       "valueAED": null,
-      "source": "دائرة الأراضي والأملاك — يوليو 2026"
+      "source": "دائرة الأراضي والأملاك — دبي"
     }
   ],
-  "generated_at": "2026-09-13T15:47:31.013Z",
+  "generated_at": "2026-09-14T03:33:45.713Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
