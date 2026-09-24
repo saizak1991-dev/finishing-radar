@@ -1461,8 +1461,42 @@
       "units": 350,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 87,
+      "name": "The Oasis by Emaar - Mirage",
+      "developer": "Emaar Properties",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "ذا أويسس",
+      "lat": 25.139,
+      "lng": 55.349,
+      "handover": "2028-Q2",
+      "priceFrom": 15000000,
+      "devClass": "major",
+      "units": 200,
+      "valueAED": null,
+      "source": "Emaar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 88,
+      "name": "Jubail Island Townhouses & Commercial Souk",
+      "developer": "Jubail Island Investment Company",
+      "type": "commercial",
+      "segment": "تجاري",
+      "emirate": "abudhabi",
+      "area": "جزيرة الجبيل",
+      "lat": 24.541,
+      "lng": 54.485,
+      "handover": "2026-Q4",
+      "priceFrom": 2500000,
+      "devClass": "boutique",
+      "units": 120,
+      "valueAED": null,
+      "source": "Property Finder — مشاريع أبوظبي"
     }
   ],
-  "generated_at": "2026-09-24T03:20:19.459Z",
+  "generated_at": "2026-09-24T16:35:27.869Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
