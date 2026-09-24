@@ -1444,8 +1444,25 @@
       "units": 450,
       "valueAED": null,
       "source": "دائرة الأراضي والأملاك — دبي"
+    },
+    {
+      "id": 86,
+      "name": "Saadiyat Cultural District Residences",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "abudhabi",
+      "area": "جزيرة السعديات",
+      "lat": 24.534,
+      "lng": 54.412,
+      "handover": "2027-Q4",
+      "priceFrom": 4200000,
+      "devClass": "major",
+      "units": 350,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-23T03:33:18.938Z",
+  "generated_at": "2026-09-24T03:20:19.459Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
