@@ -1163,7 +1163,7 @@
       "type": "apartment",
       "segment": "فاخر جدًا",
       "emirate": "dubai",
-      "area": "شارع الشيخ زايد",
+      "area": "شارع Sheikh Zayed",
       "lat": 25.1872,
       "lng": 55.2581,
       "handover": "2027-Q1",
@@ -1497,6 +1497,6 @@
       "source": "Property Finder — مشاريع أبوظبي"
     }
   ],
-  "generated_at": "2026-09-26T03:43:42.444Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
+  "generated_at": "2026-09-26T15:52:53.895Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
 }
