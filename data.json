@@ -1495,8 +1495,42 @@
       "units": 120,
       "valueAED": null,
       "source": "Property Finder — مشاريع أبوظبي"
+    },
+    {
+      "id": 89,
+      "name": "Ocean Point at Rashid Yachts & Marina",
+      "developer": "Emaar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "مينا راشد",
+      "lat": 25.2651,
+      "lng": 55.2721,
+      "handover": "2028-Q3",
+      "priceFrom": 1660000,
+      "devClass": "major",
+      "units": 210,
+      "valueAED": null,
+      "source": "Emaar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 90,
+      "name": "Mayan Phase 2",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة ياس",
+      "lat": 24.4895,
+      "lng": 54.6041,
+      "handover": "2027-Q3",
+      "priceFrom": 1400000,
+      "devClass": "major",
+      "units": 280,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-26T15:52:53.895Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
+  "generated_at": "2026-09-27T03:52:50.030Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
