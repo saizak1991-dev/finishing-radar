@@ -5,7 +5,7 @@
       "name": "Armani Beach Residences",
       "developer": "Arada",
       "type": "apartment",
-      "segment": "فاخر جدًا",
+      "segment": "faher",
       "emirate": "dubai",
       "area": "نخلة جميرا",
       "lat": 25.1131,
@@ -1582,6 +1582,6 @@
       "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-28T03:54:39.351Z",
+  "generated_at": "2026-09-28T19:21:19.247Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
 }
