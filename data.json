@@ -1231,7 +1231,7 @@
       "type": "apartment",
       "segment": "فاخر جدًا",
       "emirate": "dubai",
-      "area": "الجداف",
+      "area": "اليجداف",
       "lat": 25.215,
       "lng": 55.335,
       "handover": "2026-Q4",
@@ -1531,23 +1531,6 @@
       "source": "Aldar Properties — الإعلانات الرسمية"
     },
     {
-      "id": 91,
-      "name": "Ciel Tower",
-      "developer": "The First Group",
-      "type": "apartment",
-      "segment": "فاخر جدًا",
-      "emirate": "dubai",
-      "area": "دبي مارينا",
-      "lat": 25.0881,
-      "lng": 55.1392,
-      "handover": "2026-Q2",
-      "priceFrom": 2500000,
-      "devClass": "major",
-      "units": 1042,
-      "valueAED": null,
-      "source": "The First Group — الإعلانات الرسمية"
-    },
-    {
       "id": 92,
       "name": "The Source II",
       "developer": "Aldar Properties",
@@ -1582,6 +1565,6 @@
       "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-28T19:21:19.247Z",
+  "generated_at": "2026-09-29T04:27:57.657Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
 }
