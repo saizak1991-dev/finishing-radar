@@ -5,7 +5,7 @@
       "name": "Armani Beach Residences",
       "developer": "Arada",
       "type": "apartment",
-      "segment": "faher",
+      "segment": "فاخر جدًا",
       "emirate": "dubai",
       "area": "نخلة جميرا",
       "lat": 25.1131,
@@ -1163,7 +1163,7 @@
       "type": "apartment",
       "segment": "فاخر جدًا",
       "emirate": "dubai",
-      "area": "شارع Sheikh Zayed",
+      "area": "شارع الشيخ زايد",
       "lat": 25.1872,
       "lng": 55.2581,
       "handover": "2027-Q1",
@@ -1231,7 +1231,7 @@
       "type": "apartment",
       "segment": "فاخر جدًا",
       "emirate": "dubai",
-      "area": "اليجداف",
+      "area": "الجداف",
       "lat": 25.215,
       "lng": 55.335,
       "handover": "2026-Q4",
@@ -1265,7 +1265,7 @@
       "type": "apartment",
       "segment": "فاخر",
       "emirate": "dubai",
-      "area": "وسط downtown",
+      "area": "وسط مدينة دبي",
       "lat": 25.2011,
       "lng": 55.2754,
       "handover": "2028-Q4",
@@ -1531,7 +1531,7 @@
       "source": "Aldar Properties — الإعلانات الرسمية"
     },
     {
-      "id": 92,
+      "id": 91,
       "name": "The Source II",
       "developer": "Aldar Properties",
       "type": "apartment",
@@ -1548,7 +1548,7 @@
       "source": "Aldar Properties — الإعلانات الرسمية"
     },
     {
-      "id": 93,
+      "id": 92,
       "name": "Nikki Beach Residences",
       "developer": "Aldar Properties",
       "type": "apartment",
@@ -1565,6 +1565,6 @@
       "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-09-29T04:27:57.657Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
+  "generated_at": "2026-10-01T04:21:59.115Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
