@@ -1563,8 +1563,42 @@
       "units": 242,
       "valueAED": null,
       "source": "Aldar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 93,
+      "name": "Velora at The Valley Phase 2",
+      "developer": "Emaar Properties",
+      "type": "villa",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "ذا فالي",
+      "lat": 25.0125,
+      "lng": 55.4521,
+      "handover": "2028-Q3",
+      "priceFrom": 2400000,
+      "devClass": "major",
+      "units": 380,
+      "valueAED": null,
+      "source": "Emaar Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 94,
+      "name": "Grove Views",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة السعديات",
+      "lat": 24.5312,
+      "lng": 54.4185,
+      "handover": "2026-Q4",
+      "priceFrom": 1400000,
+      "devClass": "major",
+      "units": 102,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-10-02T04:14:50.972Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
+  "generated_at": "2026-10-02T17:34:00.353Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
 }
