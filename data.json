@@ -457,7 +457,7 @@
       "devClass": "major",
       "units": 76,
       "valueAED": null,
-      "source": "Bayut — مشاريع دبي الجديدة"
+      "source": "Bayut — مشاريع dبي الجديدة"
     },
     {
       "id": 28,
@@ -1648,8 +1648,59 @@
       "units": 750,
       "valueAED": null,
       "source": "Danube Properties — الإعلانات الرسمية"
+    },
+    {
+      "id": 98,
+      "name": "Lumina at Saadiyat",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة السعديات",
+      "lat": 24.535,
+      "lng": 54.415,
+      "handover": "2028-Q2",
+      "priceFrom": 2500000,
+      "devClass": "major",
+      "units": 150,
+      "valueAED": null,
+      "source": "أخبار العقارات أبوظبي 2026"
+    },
+    {
+      "id": 99,
+      "name": "Regent Residences Dubai Marina",
+      "developer": "Deca Properties",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "دبي مارينا",
+      "lat": 25.0885,
+      "lng": 55.1412,
+      "handover": "2027-Q4",
+      "priceFrom": 2100000,
+      "devClass": "boutique",
+      "units": 220,
+      "valueAED": null,
+      "source": "مشاريع دبي الجديدة 2026"
+    },
+    {
+      "id": 100,
+      "name": "Saeed Tower",
+      "developer": "Al Tayer Real Estate",
+      "type": "apartment",
+      "segment": "متوسط",
+      "emirate": "dubai",
+      "area": "الخليج التجاري",
+      "lat": 25.1822,
+      "lng": 55.2722,
+      "handover": "2027-Q3",
+      "priceFrom": 1300000,
+      "devClass": "boutique",
+      "units": 180,
+      "valueAED": null,
+      "source": "دائرة الأراضي والأملاك — دبي"
     }
   ],
-  "generated_at": "2026-10-03T03:57:47.726Z",
+  "generated_at": "2026-10-03T15:47:15.591Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
 }
