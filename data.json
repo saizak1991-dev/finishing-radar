@@ -457,7 +457,7 @@
       "devClass": "major",
       "units": 76,
       "valueAED": null,
-      "source": "Bayut — مشاريع dبي الجديدة"
+      "source": "Bayut — مشاريع دبي الجديدة"
     },
     {
       "id": 28,
@@ -1701,6 +1701,6 @@
       "source": "دائرة الأراضي والأملاك — دبي"
     }
   ],
-  "generated_at": "2026-10-03T15:47:15.591Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
+  "generated_at": "2026-10-04T04:30:07.121Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
