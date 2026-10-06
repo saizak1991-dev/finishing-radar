@@ -1265,7 +1265,7 @@
       "type": "apartment",
       "segment": "فاخر",
       "emirate": "dubai",
-      "area": "وسط Rigid_Downtown",
+      "area": "وسط مدينة دبي",
       "lat": 25.2011,
       "lng": 55.2754,
       "handover": "2028-Q4",
@@ -1701,6 +1701,6 @@
       "source": "دائرة الأراضي والأملاك — دبي"
     }
   ],
-  "generated_at": "2026-10-05T20:21:04.447Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
+  "generated_at": "2026-10-06T05:03:54.460Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
