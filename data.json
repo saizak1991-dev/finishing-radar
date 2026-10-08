@@ -1699,8 +1699,42 @@
       "units": 180,
       "valueAED": null,
       "source": "دائرة الأراضي والأملاك — دبي"
+    },
+    {
+      "id": 101,
+      "name": "مشروع ياس المشترك - أراد والدار",
+      "developer": "Aldar & Arada",
+      "type": "villa",
+      "segment": "فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة ياس",
+      "lat": 24.492,
+      "lng": 54.605,
+      "handover": "2028-Q4",
+      "priceFrom": 4000000,
+      "devClass": "major",
+      "units": 500,
+      "valueAED": 15000000000,
+      "source": "شراكة بـ 15 مليار درهم لتطوير مشروعات عقارية في أبوظبي"
+    },
+    {
+      "id": 102,
+      "name": "سيح السديرة فيلاز",
+      "developer": "Aldar Properties",
+      "type": "villa",
+      "segment": "متوسط-فاخر",
+      "emirate": "abudhabi",
+      "area": "سيح السديرة",
+      "lat": 24.75,
+      "lng": 54.81,
+      "handover": "2028-Q3",
+      "priceFrom": 2500000,
+      "devClass": "major",
+      "units": 600,
+      "valueAED": null,
+      "source": "شراكة بـ 15 مليار درهم لتطوير مشروعات عقارية في أبوظبي"
     }
   ],
-  "generated_at": "2026-10-07T04:31:10.007Z",
+  "generated_at": "2026-10-08T04:42:44.043Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
 }
