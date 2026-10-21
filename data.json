@@ -1370,7 +1370,7 @@
       "area": "دبي لاند",
       "lat": 25.085,
       "lng": 55.338,
-      "handover": "2026-Q4",
+      "handover": "2026-Q3",
       "priceFrom": 850000,
       "devClass": "boutique",
       "units": 310,
@@ -1735,6 +1735,6 @@
       "source": "شراكة بـ 15 مليار درهم لتطوير مشروعات عقارية في أبوظبي"
     }
   ],
-  "generated_at": "2026-10-20T16:25:13.766Z",
+  "generated_at": "2026-10-21T03:27:43.918Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
