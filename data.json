@@ -1733,8 +1733,25 @@
       "units": 600,
       "valueAED": null,
       "source": "شراكة بـ 15 مليار درهم لتطوير مشروعات عقارية في أبوظبي"
+    },
+    {
+      "id": 103,
+      "name": "Binghatti Luxuria",
+      "developer": "Binghatti",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "dubai",
+      "area": "قرية جميرا الدائرية",
+      "lat": 25.0581,
+      "lng": 55.2082,
+      "handover": "2026-Q3",
+      "priceFrom": 720000,
+      "devClass": "major",
+      "units": 210,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة 2026"
     }
   ],
-  "generated_at": "2026-10-24T15:27:52.263Z",
+  "generated_at": "2026-10-25T03:22:37.641Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
