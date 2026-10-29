@@ -1750,8 +1750,25 @@
       "units": 210,
       "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة 2026"
+    },
+    {
+      "id": 104,
+      "name": "Keturah Reserve",
+      "developer": "MAG",
+      "type": "villa",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "ميدان",
+      "lat": 25.152,
+      "lng": 55.305,
+      "handover": "2026-Q3",
+      "priceFrom": 8500000,
+      "devClass": "major",
+      "units": 53,
+      "valueAED": 3000000000,
+      "source": "Bayut — مشاريع دبي الجديدة 2026"
     }
   ],
-  "generated_at": "2026-10-28T17:57:02.652Z",
-  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.5-flash)."
+  "generated_at": "2026-10-29T04:33:50.968Z",
+  "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
