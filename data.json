@@ -1370,7 +1370,7 @@
       "area": "دبي لاند",
       "lat": 25.085,
       "lng": 55.338,
-      "handover": "2026-Q3",
+      "handover": "2026-Q4",
       "priceFrom": 850000,
       "devClass": "boutique",
       "units": 310,
@@ -1744,7 +1744,7 @@
       "area": "قرية جميرا الدائرية",
       "lat": 25.0581,
       "lng": 55.2082,
-      "handover": "2026-Q3",
+      "handover": "2026-Q4",
       "priceFrom": 720000,
       "devClass": "major",
       "units": 210,
@@ -1761,7 +1761,7 @@
       "area": "ميدان",
       "lat": 25.152,
       "lng": 55.305,
-      "handover": "2026-Q3",
+      "handover": "2026-Q4",
       "priceFrom": 8500000,
       "devClass": "major",
       "units": 53,
@@ -1769,6 +1769,6 @@
       "source": "Bayut — مشاريع دبي الجديدة 2026"
     }
   ],
-  "generated_at": "2026-11-05T05:19:01.534Z",
+  "generated_at": "2026-11-06T05:19:03.089Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
