@@ -1767,8 +1767,25 @@
       "units": 53,
       "valueAED": 3000000000,
       "source": "Bayut — مشاريع دبي الجديدة 2026"
+    },
+    {
+      "id": 105,
+      "name": "LIV LUX",
+      "developer": "LIV Real Estate Development",
+      "type": "apartment",
+      "segment": "فاخر",
+      "emirate": "dubai",
+      "area": "دبي مارينا",
+      "lat": 25.0862,
+      "lng": 55.1418,
+      "handover": "2026-Q4",
+      "priceFrom": 1850000,
+      "devClass": "boutique",
+      "units": 200,
+      "valueAED": null,
+      "source": "Bayut — مشاريع دبي الجديدة"
     }
   ],
-  "generated_at": "2026-11-07T17:28:54.642Z",
+  "generated_at": "2026-11-08T04:40:47.333Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
