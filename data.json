@@ -1277,18 +1277,18 @@
     },
     {
       "id": 76,
-      "name": "Siniya Island",
+      "name": "Sobha Orbis",
       "developer": "Sobha Realty",
-      "type": "villa",
-      "segment": "فاخر جدًا",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
       "emirate": "dubai",
-      "area": "جزيرة السنيّة",
-      "lat": 25.56,
-      "lng": 55.59,
-      "handover": "2028-Q2",
-      "priceFrom": 10500000,
+      "area": "موتور سيتي",
+      "lat": 25.0482,
+      "lng": 55.2381,
+      "handover": "2027-Q4",
+      "priceFrom": 980000,
       "devClass": "major",
-      "units": 800,
+      "units": 1200,
       "valueAED": null,
       "source": "Sobha Realty — الإعلانات الرسمية"
     },
@@ -1786,6 +1786,6 @@
       "source": "Bayut — مشاريع دبي الجديدة"
     }
   ],
-  "generated_at": "2026-11-19T06:04:54.261Z",
+  "generated_at": "2026-11-19T19:59:49.718Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
