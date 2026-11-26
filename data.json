@@ -1784,8 +1784,42 @@
       "units": 200,
       "valueAED": null,
       "source": "Bayut — مشاريع دبي الجديدة"
+    },
+    {
+      "id": 106,
+      "name": "Alba Residences by Omniyat",
+      "developer": "Omniyat",
+      "type": "apartment",
+      "segment": "فاخر جدًا",
+      "emirate": "dubai",
+      "area": "نخلة جميرا",
+      "lat": 25.115,
+      "lng": 55.132,
+      "handover": "2028-Q2",
+      "priceFrom": 22000000,
+      "devClass": "boutique",
+      "units": 60,
+      "valueAED": 2500000000,
+      "source": "Omniyat — الإعلانات الرسمية"
+    },
+    {
+      "id": 107,
+      "name": "Mayar at Yas Island",
+      "developer": "Aldar Properties",
+      "type": "apartment",
+      "segment": "متوسط-فاخر",
+      "emirate": "abudhabi",
+      "area": "جزيرة ياس",
+      "lat": 24.496,
+      "lng": 54.602,
+      "handover": "2028-Q3",
+      "priceFrom": 1100000,
+      "devClass": "major",
+      "units": 310,
+      "valueAED": null,
+      "source": "Aldar Properties — الإعلانات الرسمية"
     }
   ],
-  "generated_at": "2026-11-26T06:59:36.892Z",
+  "generated_at": "2026-11-26T20:58:56.025Z",
   "source_note": "محدّث تلقائيًا عبر GitHub Actions + بحث DuckDuckGo حي + Gemini (gemini-3.6-flash)."
 }
